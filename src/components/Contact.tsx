@@ -2,8 +2,7 @@ import styled from "styled-components";
 import {PageSub, PageTitle} from "../utils/CommonCompnents";
 import ContactForm from "./ContactForm";
 
-const Contact = () => {
-	const SectionContainer = styled.div`
+const SectionContainer = styled.div`
 		width: 100%;
 		height: auto;
 		display: flex;
@@ -11,7 +10,7 @@ const Contact = () => {
 		align-items: center;
 		justify-content: center;
 	`;
-	const ContactWrapper = styled.div`
+const ContactWrapper = styled.div`
 		width: 65%;
 		height: auto;
 		display: flex;
@@ -22,14 +21,17 @@ const Contact = () => {
             width: 95%;
         }
 	`;
-	const FormContainer = styled.div`
+const FormContainer = styled.div`
 		width: 100%;
         display: flex;
         align-items: center;
         justify-content: center;
 	`;
+
+const Contact = () => {
+	
 	return (
-		<SectionContainer>
+		<SectionContainer id="contact">
 			<ContactWrapper>
 				<PageTitle>Contact</PageTitle>
 				<PageSub>Feel free to reach out</PageSub>

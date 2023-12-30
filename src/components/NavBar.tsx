@@ -3,6 +3,8 @@ import { darkTheme } from "../utils/Theme";
 import { Menu } from "@mui/icons-material";
 import { useState } from "react";
 
+
+
 const NavBar = () => {
     const [open, setOpen] = useState<boolean>(false)
     const Nav = styled.div`
@@ -34,7 +36,8 @@ const NavBar = () => {
     const MobileNav = styled.div`
 		display: none;
         position: absolute;
-        right: 40px;
+		top:10px;
+        right: 20px;
         @media(max-width:992px){
             display: block;
         }
@@ -57,12 +60,12 @@ const NavBar = () => {
             transition: ease 1s;
             flex-direction: column;
             position: absolute;
-            top: 75px;
+            top: 65px;
             left: 0;
             width: 100%;
 			height: auto;
 			z-index: 99;
-            background: #00000042;
+            background: #000000e5;
         }
         @media(max-width:600px){
             transition: ease 1s;
@@ -74,6 +77,7 @@ const NavBar = () => {
 		color: ${darkTheme.text_primary};
 		font-size: 1.3rem;
 		transition: ease 0.6s;
+		text-decoration: none;
 		&:hover {
 			color: ${darkTheme.primary};
 		}
@@ -130,9 +134,11 @@ const NavBar = () => {
                     <Menu sx={{ width: "45px", height: "50px", fill: "white" }} onClick={() => setOpen(!open)} />
                 </MobileNav>
                 <NavItems>
-                    <Link>About</Link>
-                    <Link>Skills</Link>
-                    <Link>Projects</Link>
+                    <Link href="#about">About</Link>
+                    <Link href="#skills">Skills</Link>
+                    <Link href="#projects">Projects</Link>
+                    <Link href="#education">Education</Link>
+                    <Link href="#contact">Contact</Link>
                     <GithubLinkRes>Github profile</GithubLinkRes>
                 </NavItems>
                 <GithubLink>Github profile</GithubLink>

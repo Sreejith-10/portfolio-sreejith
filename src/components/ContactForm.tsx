@@ -1,8 +1,7 @@
 import styled from "styled-components";
 
-const ContactForm = () => {
-	const FormWrapper = styled.div`
-		background: ${({theme}) => theme.bg};
+const FormWrapper = styled.div`
+		background: ${({ theme }) => theme.bg};
 		width: 60%;
 		height: auto;
 		padding: 30px;
@@ -18,32 +17,32 @@ const ContactForm = () => {
             width: 95%;
         }
 	`;
-	const FormTitle = styled.h1`
+const FormTitle = styled.h1`
 		font-size: 20px;
-		color: ${({theme}) => theme.white};
+		color: ${({ theme }) => theme.white};
 	`;
-	const FormInput = styled.input`
+const FormInput = styled.input`
 		width: 100%;
 		height: 40px;
 		padding: 12px 16px;
 		font-size: 18px;
-		border: solid 1px ${({theme}) => theme.primary};
+		border: solid 1px ${({ theme }) => theme.primary};
 		border-radius: 12px;
 		background: inherit;
-		color: ${({theme}) => theme.white};
+		color: ${({ theme }) => theme.white};
 	`;
-	const FormText = styled.textarea`
+const FormText = styled.textarea`
 		width: 100%;
 		height: 80px;
 		font-size: 18px;
-		color: ${({theme}) => theme.white};
+		color: ${({ theme }) => theme.white};
 		border-radius: 12px;
 		padding: 12px 16px;
 		background: inherit;
-		border: solid 1px ${({theme}) => theme.primary};
+		border: solid 1px ${({ theme }) => theme.primary};
 		text-align: start;
 	`;
-	const Submit = styled.div`
+const Submit = styled.div`
 		width: 100%;
 		height: 50px;
         border-radius: 12px;
@@ -59,6 +58,9 @@ const ContactForm = () => {
 		);
 		box-shadow: rgb(31, 38, 52) 20px 20px 60px, rgb(31, 38, 52) -20px -20px 60px;
 	`;
+
+const ContactForm = () => {
+	
 	return (
 		<FormWrapper>
 			<FormTitle>Email me</FormTitle>

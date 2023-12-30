@@ -3,8 +3,7 @@ import styled from "styled-components";
 import {darkTheme} from "../utils/Theme";
 import { userInfo } from "../constants/UserData";
 
-const Hero = () => {
-	const HeroContainer = styled.div`
+const HeroContainer = styled.div`
 		width: 100%;
 		height: auto;
 		background: ${darkTheme.card_light};
@@ -13,7 +12,7 @@ const Hero = () => {
 		justify-content: center;
 		clip-path: polygon(0 0,100% 0, 100% 100%,70% 95%,0 100%);
 		`;
-	const HeroWrapper = styled.div`
+const HeroWrapper = styled.div`
 		width: 65%;
 		padding: 80px 30px;
 		display: flex;
@@ -25,7 +24,7 @@ const Hero = () => {
 			padding: 20px 20px;
 		}
 	`;
-	const HeroLeft = styled.div`
+const HeroLeft = styled.div`
 		width: 50%;
 		height: 100%;
 		@media (max-width: 600px) {
@@ -37,7 +36,7 @@ const Hero = () => {
 			justify-content: center;
 		}
 	`;
-	const HeroRight = styled.div`
+const HeroRight = styled.div`
 		width: 50%;
 		height: 100%;
 		@media (max-width: 600px) {
@@ -46,7 +45,7 @@ const Hero = () => {
 			opacity: 20%;
 		}
 	`;
-	const Title = styled.h1`
+const Title = styled.h1`
 		color: white;
 		font-size: 3.5rem;
 		@media (max-width:600px) {
@@ -54,11 +53,11 @@ const Hero = () => {
 			font-size: 3.2rem;
 		}
 	`;
-	const HeroImage = styled.img`
+const HeroImage = styled.img`
 		width: 100%;
 		height: 100%;
 	`;
-	const ResumeButton = styled.button`
+const ResumeButton = styled.button`
 		width: 50%;
 		background: linear-gradient(
 			225deg,
@@ -81,8 +80,11 @@ const Hero = () => {
 		margin-bottom:25px;
 		}
 	`;
+
+const Hero = () => {
+	
 	return (
-		<HeroContainer>
+		<HeroContainer id="about">
 			<HeroWrapper>
 				<HeroLeft>
 					<Title>Hi,I am {userInfo.name}</Title>

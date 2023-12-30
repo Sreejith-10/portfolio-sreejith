@@ -2,14 +2,13 @@ import styled from "styled-components";
 import {PageSub, PageTitle} from "../utils/CommonCompnents";
 import {skills} from "../constants/UserData";
 
-const Skills = () => {
-	const SkillContianer = styled.div`
+const SkillContianer = styled.div`
 		width: 100%;
 		display: flex;
 		align-items: center;
 		justify-content: center;
 	`;
-	const SkillWrapper = styled.div`
+const SkillWrapper = styled.div`
 		width: 65%;
 		padding: 80px 30px;
 		display: flex;
@@ -22,7 +21,7 @@ const Skills = () => {
 			padding: 20px 20px;
 		}
 	`;
-	const SkillBox = styled.div`
+const SkillBox = styled.div`
 		width: 60%;
 		height: auto;
 		border: rgba(242, 243, 244, 0.5) solid 1px;
@@ -38,7 +37,7 @@ const Skills = () => {
 			width: 95%;
 		}
 	`;
-	const SkillItem = styled.div`
+const SkillItem = styled.div`
 		width: fit-content;
 		border: 0.5px solid white;
 		border-radius: 14px;
@@ -54,7 +53,7 @@ const Skills = () => {
 			padding: 6px 12px;
 		}
 	`;
-	const SkillIcon = styled.img`
+const SkillIcon = styled.img`
 		width: 40px;
 		height: 40px;
 		@media (max-width: 600px) {
@@ -62,8 +61,11 @@ const Skills = () => {
 			height: 25px;
 		}
 	`;
+
+const Skills = () => {
+	
 	return (
-		<SkillContianer>
+		<SkillContianer id="skills">
 			<SkillWrapper>
 				<PageTitle>Skills</PageTitle>
 				<PageSub>

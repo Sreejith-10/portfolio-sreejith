@@ -2,8 +2,7 @@ import styled from "styled-components";
 import {PageSub, PageTitle} from "../utils/CommonCompnents";
 import {Typography} from "@mui/material";
 
-const Education = () => {
-	const EducationContainer = styled.div`
+const EducationContainer = styled.div`
 		width: 100%;
 		margin-top: 200px;
 		height: 100%;
@@ -14,7 +13,7 @@ const Education = () => {
             margin-top: 100px;
         }
 	`;
-	const Wrapper = styled.div`
+const Wrapper = styled.div`
 		width: 65%;
 		height: auto;
 		display: flex;
@@ -25,7 +24,7 @@ const Education = () => {
             width: 100%;
         }
 	`;
-	const CardSection = styled.div`
+const CardSection = styled.div`
 		width: 100%;
 		height: auto;
 		margin-top: 70px;
@@ -39,20 +38,23 @@ const Education = () => {
             gap:300px;
         }
 	`;
-	const EducationCard = styled.div`
+const EducationCard = styled.div`
 		width: 60%;
 		height: auto;
 		padding: 30px 20px;
-		background: ${({theme}) => theme.bg_light};
-		border: solid 1px ${({theme}) => theme.primary};
+		background: ${({ theme }) => theme.bg_light};
+		border: solid 1px ${({ theme }) => theme.primary};
        border-radius: 16px;
        box-shadow: ${({ theme }) => theme.bgLight} 0px 4px 24px;
        @media(max-width:600px){
             width: 90%;
         }
 	`;
+
+const Education = () => {
+	
 	return (
-		<EducationContainer>
+		<EducationContainer id="education">
 			<Wrapper>
 				<PageTitle>Education</PageTitle>
 				<PageSub>Educational qualification</PageSub>
