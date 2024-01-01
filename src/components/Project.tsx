@@ -67,7 +67,7 @@ const Project = () => {
 		<div id="projects">
 			<ProjectContainer>
 				{showDetails && (
-					<CardDetails setShowDetails={setShowDetails} cardData={cardData} layoutId={layoutId} />
+						<CardDetails setShowDetails={setShowDetails} cardData={cardData} layoutId={layoutId}/>
 				)}
 				<ProjectWrapper>
 					<PageTitle>Projects</PageTitle>

@@ -14,12 +14,16 @@ type CardDetailsType = {
 
 const BOX = styled.div`
 	width: 100%;
-	z-index: 99;
 	height: 100%;
+	z-index: 99;
 	position: absolute;
 	display: flex;
 	align-items: center;
 	justify-content: center;
+	@media (max-width:600px) {
+		width: 100vw;
+		height: 100vh;
+	}
 `;
 const CardTech = styled.div`
 	width: 100%;
@@ -129,10 +133,12 @@ const CardImages = styled.img`
 	object-position: 50% 50%;
 `;
 const CardDetails = ({ setShowDetails, cardData, layoutId }: CardDetailsType) => {
-	const [scrolling, setScrolling] = useState(false)
+	const [scrolling, setScrolling] = useState(false);
 	useEffect(() => {
-		scrolling ? document.body.style.overflow = "hidden" : document.body.style.overflow = ""
-	}, [scrolling])
+		scrolling
+			? (document.body.style.overflow = "hidden")
+			: (document.body.style.overflow = "");
+	}, [scrolling]);
 	return (
 		<BOX>
 			<motion.div className="CardContainer" layoutId={layoutId}>
@@ -164,7 +170,9 @@ const CardDetails = ({ setShowDetails, cardData, layoutId }: CardDetailsType) =>
 					<Typography fontSize={20} marginTop={3}>
 						Images
 					</Typography>
-					<ImgWrapper onMouseEnter={() => setScrolling(true)} onMouseLeave={() => setScrolling(false)}>
+					<ImgWrapper
+						onMouseEnter={() => setScrolling(true)}
+						onMouseLeave={() => setScrolling(false)}>
 						{cardData.images.map((item) => {
 							return <MiniImg src={item} />;
 						})}

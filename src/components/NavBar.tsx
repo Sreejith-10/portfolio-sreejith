@@ -1,13 +1,15 @@
 import styled from "styled-components";
-import {darkTheme} from "../utils/Theme";
-import {Menu} from "@mui/icons-material";
-import {useState} from "react";
+import { darkTheme } from "../utils/Theme";
+import { Close, Menu } from "@mui/icons-material";
+import { useState } from "react";
+import { motion } from "framer-motion"
+import "../App.css"
 
 const NavBar = () => {
 	const [open, setOpen] = useState<boolean>(false);
 
 	const Nav = styled.div`
-		background-color: ${({theme}) => theme.bg};
+		background-color: ${({ theme }) => theme.bg};
 		width: 100%;
 		height: 8vh;
 		position: sticky;
@@ -54,38 +56,26 @@ const NavBar = () => {
 		align-items: center;
 		justify-content: center;
 		gap: 50px;
-		@media (max-width: 992px) {
-			transform: ${open ? "translateX(0%)" : "translateX(-150%)"};
-			transition: ease 1s;
-			flex-direction: column;
-			position: absolute;
-			top: 65px;
-			left: 0;
-			width: 100%;
-			height: auto;
-			z-index: 99;
-			background: ${({theme}) => theme.bg};
-		}
 		@media (max-width: 600px) {
-			transition: ease 1s;
+			display: none;
 		}
 	`;
 	const Link = styled.a`
 		cursor: pointer;
-		color: ${({theme}) => theme.text_primary};
+		color: ${({ theme }) => theme.text_primary};
 		font-size: 1.3rem;
 		transition: ease 0.6s;
 		text-decoration: none;
 		&:hover {
-			color: ${({theme}) => theme.primary};
+			color: ${({ theme }) => theme.primary};
 		}
 	`;
 	const GithubLink = styled.button`
-		background: ${({theme}) => theme.bg};
+		background: ${({ theme }) => theme.bg};
 		width: 250px;
 		max-width: 50%;
 		padding: 10px 20px;
-		color: ${({theme}) => theme.primary};
+		color: ${({ theme }) => theme.primary};
 		border: solid 2px #854ce6;
 		border-radius: 50px;
 		font-size: 1.2rem;
@@ -100,12 +90,12 @@ const NavBar = () => {
 		}
 	`;
 	const GithubLinkRes = styled.button`
-		background: ${({theme}) => theme.bg};
+		background: ${({ theme }) => theme.bg};
 		width: 250px;
 		max-width: 50%;
 		padding: 10px 20px;
 		cursor: pointer;
-		color: ${({theme}) => theme.primary};
+		color: ${({ theme }) => theme.primary};
 		border: solid 2px #854ce6;
 		border-radius: 50px;
 		font-size: 1.2rem;
@@ -123,32 +113,54 @@ const NavBar = () => {
 		}
 	`;
 	return (
-		<Nav>
-			<NavWrapper>
-				<NavIconContainer>
-					<Title>Portfolio</Title>
-				</NavIconContainer>
-				<MobileNav>
-					<Menu
-						sx={{
-							width: "45px",
-							height: "50px",
-							fill: {lg: "white", xs: "black"},
-						}}
-						onClick={() => setOpen(!open)}
-					/>
-				</MobileNav>
-				<NavItems>
-					<Link href="#about">About</Link>
-					<Link href="#skills">Skills</Link>
-					<Link href="#projects">Projects</Link>
-					<Link href="#education">Education</Link>
-					<Link href="#contact">Contact</Link>
-					<GithubLinkRes>Github profile</GithubLinkRes>
-				</NavItems>
-				<GithubLink>Github profile</GithubLink>
-			</NavWrapper>
-		</Nav>
+		<>
+			<Nav>
+				<NavWrapper>
+					<NavIconContainer>
+						<Title>Portfolio</Title>
+					</NavIconContainer>
+					<MobileNav>
+						{!open ? (
+							<Menu
+								sx={{
+									width: "45px",
+									height: "50px",
+									fill: "lightgray",
+								}}
+								onClick={() => setOpen(true)}
+							/>
+						) : (
+							<Close
+								sx={{
+									width: "45px",
+									height: "50px",
+									fill: "lightgray",
+								}}
+								onClick={() => setOpen(false)}
+							/>
+						)}
+					</MobileNav>
+					<NavItems>
+						<Link href="#about">About</Link>
+						<Link href="#skills">Skills</Link>
+						<Link href="#projects">Projects</Link>
+						<Link href="#education">Education</Link>
+						<Link href="#contact">Contact</Link>
+					</NavItems>
+					<GithubLink>Github profile</GithubLink>
+				</NavWrapper>
+				{open && (
+					<motion.div variants={{hidden:{opacity:0,y:-100},visible:{opacity:1,y:0}}} initial="hidden" animate={open && "visible"} transition={{delay:.5,duration:.5}} className="NavMobileItems">
+						<Link href="#about">About</Link>
+						<Link href="#skills">Skills</Link>
+						<Link href="#projects">Projects</Link>
+						<Link href="#education">Education</Link>
+						<Link href="#contact">Contact</Link>
+						<GithubLinkRes>Github profile</GithubLinkRes>
+					</motion.div>
+				)}
+			</Nav>
+		</>
 	);
 };
 

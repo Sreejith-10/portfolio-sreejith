@@ -6,6 +6,9 @@ export const PageTitle = styled.h1`
 	font-weight: 600;
 	margin-top: 20px;
 	color: ${({theme})=>theme.text_primary};
+	@media (max-width: 600px) {
+		font-size: 32px;
+	}
 `;
 
 export const PageSub = styled.p`

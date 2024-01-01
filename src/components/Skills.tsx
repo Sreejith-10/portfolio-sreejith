@@ -1,7 +1,6 @@
 import { useScroll } from "framer-motion";
 import { useRef } from "react";
 import { PageSub, PageTitle } from "../utils/CommonCompnents";
-import { darkTheme } from "../utils/Theme";
 import { skills } from "../constants/UserData";
 import { motion } from "framer-motion";
 import styled from "styled-components";
@@ -41,9 +40,7 @@ const SkillItem = styled.div`
 	gap: 10px;
 	@media (max-width: 600px) {
 		font-size: 16px;
-		padding: 6px 12px;
-		color: black;
-		border: solid 1px ${darkTheme.bg};
+		padding: 8px 12px;
 	}
 `;
 const SkillIcon = styled.img`
@@ -97,7 +94,7 @@ const Skills = () => {
 					className="SkillBox"
 					variants={container}
 					initial="hidden"
-					animate="visible">
+					whileInView={"visible"}>
 					{skills.map((items, index) => (
 						<motion.li
 							key={index}
