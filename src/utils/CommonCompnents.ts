@@ -1,12 +1,11 @@
 import styled from "styled-components";
-import {darkTheme} from "./Theme";
 
 export const PageTitle = styled.h1`
 	font-size: 42px;
 	text-align: center;
 	font-weight: 600;
 	margin-top: 20px;
-	color: ${darkTheme.text_primary};
+	color: ${({theme})=>theme.text_primary};
 `;
 
 export const PageSub = styled.p`
@@ -14,7 +13,7 @@ export const PageSub = styled.p`
 	margin-top: 20px;
 	text-align: center;
 	max-width: 600px;
-	color: ${darkTheme.text_secondary};
+	color: ${({theme})=>theme.text_primary};
 `;
 
 export const CardImage = styled.img`

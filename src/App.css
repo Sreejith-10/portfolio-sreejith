@@ -6,3 +6,59 @@ body {
 	margin: 0 !important;
 }
 
+.SkillBox {
+	width: 60%;
+	height: auto;
+	border: #f2f3f47f solid 1px;
+	border-radius: 20px;
+	padding: 20px;
+	box-shadow: rgba(23, 92, 230, 0.15) 0px 4px 24px;
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+	justify-content: center;
+	gap: 20px;
+	@media (max-width: 600px) {
+		width: 95%;
+		border: grey solid 1px;
+	}
+}
+
+.CardContainer {
+	max-width: 800px;
+	width: 100%;
+	height: 100%;
+	border-radius: 16px;
+	margin: 50px 12px;
+	height: min-content;
+	max-height: 80%;
+	background-color: #1c1c27;
+	color: #f2f3f4;
+	padding: 20px;
+	display: flex;
+	flex-direction: column;
+	align-items: start;
+	justify-content: center;
+	position: absolute;
+	gap: 20px;
+	z-index: 99;
+}
+
+.FormWrapper {
+	background: #1C1C27;
+	border: solid .5px rgb(132, 0, 255);
+	width: 60%;
+	height: auto;
+	padding: 30px;
+	margin-top: 50px;
+	margin-bottom: 100px;
+	display: flex;
+	flex-direction: column;
+	align-items: start;
+	gap: 20px;
+	border-radius: 18px;
+	box-shadow: "#175ce626 0px 4px 24px";
+	@media (max-width: 600px) {
+		width: 95%;
+	}
+}

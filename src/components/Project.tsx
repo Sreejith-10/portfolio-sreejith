@@ -4,6 +4,7 @@ import Card from "./Card";
 import { projectCard } from "../constants/UserData";
 import { useState } from "react";
 import CardDetails from "./CardDetails";
+import { motion } from "framer-motion";
 
 const ProjectContainer = styled.div`
 	width: 100%;
@@ -24,7 +25,7 @@ const ProjectWrapper = styled.div`
 		width: 90%;
 	}
 `;
-const ProjectCardContainer = styled.div`
+const ProjectCardContainer = styled.ul`
 	width: auto;
 	height: 100%;
 	display: flex;
@@ -53,13 +54,20 @@ const Project = () => {
 		github: "",
 		live: "",
 	});
-
+	const [layoutId, setLayoutId] = useState<string>("")
+	const Fadein = {
+		hidden: { opacity: 0, x: 100 },
+		visible: (ind: number) => ({
+			opacity: 1, x: 0, transition: {
+				delay: .3 * ind
+			},
+		}),
+	};
 	return (
 		<div id="projects">
-
-			<ProjectContainer >
+			<ProjectContainer>
 				{showDetails && (
-					<CardDetails setShowDetails={setShowDetails} cardData={cardData} />
+					<CardDetails setShowDetails={setShowDetails} cardData={cardData} layoutId={layoutId} />
 				)}
 				<ProjectWrapper>
 					<PageTitle>Projects</PageTitle>
@@ -67,18 +75,28 @@ const Project = () => {
 					<ProjectCardContainer>
 						{projectCard?.map((item, id) => {
 							return (
-								<Card
-									item={item}
-									setShowDetails={setShowDetails}
-									setCardData={setCardData}
-									key={id}
-								/>
+								<motion.li
+									layoutId={item.projectId}
+									style={{ listStyle: "none" }}
+									variants={Fadein}
+									initial="hidden"
+									whileInView="visible"
+									viewport={{ once: true }}
+									custom={id}
+									key={id}>
+									<Card
+										item={item}
+										setShowDetails={setShowDetails}
+										setCardData={setCardData}
+										setLayoutId={setLayoutId}
+									/>
+								</motion.li>
 							);
 						})}
 					</ProjectCardContainer>
 				</ProjectWrapper>
 			</ProjectContainer>
-		</div>
+		</div >
 	);
 };
 

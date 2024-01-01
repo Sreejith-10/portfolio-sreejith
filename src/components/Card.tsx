@@ -1,5 +1,4 @@
 import styled from "styled-components";
-import { darkTheme } from "../utils/Theme";
 import { Typography } from "@mui/material";
 import { CardImage } from "../utils/CommonCompnents";
 import { CardData, SetState } from "../types/lib";
@@ -16,16 +15,17 @@ type CardType = {
 	item: ItemType;
 	setShowDetails: SetState<boolean>;
 	setCardData: SetState<CardData>
+	setLayoutId: SetState<string>
 };
 
 const ProjectCard = styled.div`
 	width: 300px;
 	height: 450px;
-	background-color: ${darkTheme.bg};
+	background-color: ${({ theme }) => theme.bg};
 	cursor: pointer;
-	border: solid 1px ${darkTheme.primary};
+	border: solid 1px ${({ theme }) => theme.primary};
 	border-radius: 10px;
-	box-shadow: ${darkTheme.bgLight} 0px 0px 12px 4px;
+	box-shadow: ${({ theme }) => theme.bgLight} 0px 0px 12px 4px;
 	overflow: hidden;
 	padding: 26px 20px;
 	display: flex;
@@ -34,7 +34,7 @@ const ProjectCard = styled.div`
 	transition: all 0.5s ease-in-out 0s;
 	&:hover {
 		transform: translateY(-10px);
-		box-shadow: ${darkTheme.black} 0px 0px 50px 4px;
+		box-shadow: ${({ theme }) => theme.black} 0px 0px 50px 4px;
 		filter: brightness(1.1);
 	}
 	@media (max-width: 600px) {
@@ -53,8 +53,8 @@ const CardTech = styled.div`
 const Span = styled.span`
 	font-size: 18px;
 	font-weight: 400;
-	color: ${darkTheme.primary};
-	border: ${darkTheme.primary} 1px solid;
+	color: ${({ theme }) => theme.primary};
+	border: ${({ theme }) => theme.primary} 1px solid;
 	padding: 2px 8px;
 	border-radius: 20px;
 `;
@@ -67,7 +67,7 @@ const CardDescription = styled.div`
 	padding: 0px 2px;
 `;
 const CardSubTitle = styled.div`
-	color: ${darkTheme.text_secondary};
+	color: ${({ theme }) => theme.text_secondary};
 	font-weight: 400;
 	overflow: hidden;
 	margin-top: 8px;
@@ -78,10 +78,11 @@ const CardSubTitle = styled.div`
 	text-overflow: ellipsis;
 `;
 
-const Card = ({ item, setShowDetails, setCardData }: CardType) => {
+const Card = ({ item, setShowDetails, setCardData, setLayoutId }: CardType) => {
 	const cardClickHandler = (item: any) => {
 		setShowDetails(true);
 		setCardData(item);
+		setLayoutId(item.projectId)
 	};
 	return (
 		<ProjectCard onClick={() => cardClickHandler(item)}>
@@ -92,7 +93,7 @@ const Card = ({ item, setShowDetails, setCardData }: CardType) => {
 				})}
 			</CardTech>
 			<CardDescription>
-				<Typography color={darkTheme.text_secondary} variant="h5">
+				<Typography variant="h5" color={"white"}>
 					{item.projectTitle}
 				</Typography>
 				<CardSubTitle>{item.description}</CardSubTitle>

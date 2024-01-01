@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import {PageSub, PageTitle} from "../utils/CommonCompnents";
+import { PageSub, PageTitle } from "../utils/CommonCompnents";
 import ContactForm from "./ContactForm";
 
 const SectionContainer = styled.div`
@@ -29,7 +29,7 @@ const FormContainer = styled.div`
 	`;
 
 const Contact = () => {
-	
+
 	return (
 		<SectionContainer id="contact">
 			<ContactWrapper>

@@ -93,7 +93,7 @@ const Footer = () => {
                             }}
                         />
                     </a>
-                    <a href="https://www.linkdin.com/in/sreejith-t-s63858024a">
+                    <a href="http://www.linkdin.com/in/sreejith-t-s63858024a">
                         <LinkedIn
                             sx={{
                                 width: { lg: "45px", xs: "35px" },

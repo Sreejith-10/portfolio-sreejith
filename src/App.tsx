@@ -31,7 +31,7 @@ const Wrapper = styled.div`
 
 const App = () => {
 	return (
-		<ThemeProvider theme={darkTheme}>
+		<ThemeProvider theme={darkTheme }>
 			<NavBar />
 			<Body>
 				<Hero />
