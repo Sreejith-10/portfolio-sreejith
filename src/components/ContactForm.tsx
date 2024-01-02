@@ -1,6 +1,7 @@
 import styled from "styled-components";
 import { motion } from "framer-motion";
 import "../App.css"
+import { FormEvent } from "react";
 
 const FormTitle = styled.h1`
 	font-size: 20px;
@@ -27,9 +28,10 @@ const FormText = styled.textarea`
 	border: solid 1px ${({ theme }) => theme.primary};
 	text-align: start;
 `;
-const Submit = styled.div`
+const Submit = styled.button`
 	width: 100%;
 	height: 50px;
+	border: none;
 	border-radius: 12px;
 	display: grid;
 	place-content: center;
@@ -45,14 +47,17 @@ const Submit = styled.div`
 `;
 
 const ContactForm = () => {
+	const onSubmitHandler = (e: FormEvent) => {
+		console.log(e);
+	}
 	return (
-			<motion.div className="FormWrapper" initial={{scale:0}} whileInView={{rotate:360,scale:1}} transition={{type:"spring",stiffness:260,damping:20}}>
-				<FormTitle>Email me</FormTitle>
-				<FormInput placeholder="Your email" />
-				<FormInput placeholder="Your name" />
-				<FormText placeholder="Subject" />
-				<Submit>Send</Submit>
-			</motion.div>
+		<motion.form onSubmit={onSubmitHandler} className="FormWrapper" initial={{ scale: 0 }} whileInView={{ rotate: 360, scale: 1 }} transition={{ type: "spring", stiffness: 260, damping: 20 }}>
+			<FormTitle>Email me</FormTitle>
+			<FormInput placeholder="Your email" required type="email" />
+			<FormInput placeholder="Your name" required type="text" />
+			<FormText placeholder="Subject" />
+			<Submit type="submit">Send</Submit>
+		</motion.form>
 	);
 };
 

@@ -1,5 +1,5 @@
-import styled, { ThemeProvider } from "styled-components";
-import { darkTheme } from "./utils/Theme.js";
+import styled, {ThemeProvider} from "styled-components";
+import {darkTheme} from "./utils/Theme.js";
 import NavBar from "./components/NavBar";
 import Hero from "./components/Hero.js";
 import Skills from "./components/Skills.js";
@@ -7,10 +7,13 @@ import Project from "./components/Project.js";
 import Education from "./components/Education.js";
 import Contact from "./components/Contact.js";
 import Footer from "./components/Footer.js";
+import {useState} from "react";
+import CardDetails from "./components/CardDetails.js";
 
 const Body = styled.div`
-	background-color: ${({ theme }) => theme.bg};
+	background-color: ${({theme}) => theme.bg};
 	width: 100%;
+	height: auto;
 	overflow-x: hidden;
 `;
 
@@ -28,24 +31,65 @@ const Wrapper = styled.div`
 	width: 100%;
 	clip-path: polygon(0 0, 100% 0, 100% 100%, 30% 98%, 0 100%);
 `;
-
+const OutSide = styled.div`
+	width: 100%;
+	height: 100%;
+	position: fixed;
+	top: 0;
+	left: 0;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	background: #1c1c27f0;
+	overflow: hidden;
+`;
 const App = () => {
+	const [cardData, setCardData] = useState({
+		projectId: "",
+		projectImg: "",
+		projectTitle: "",
+		tech: [""],
+		description: "",
+		features: [""],
+		images: [""],
+		github: "",
+		live: "",
+	});
+	const [layoutId, setLayoutId] = useState("");
+	const [showDetails, setShowDetails] = useState(false);
+	
+
 	return (
-		<ThemeProvider theme={darkTheme }>
-			<NavBar />
-			<Body>
-				<Hero />
-				<Wrapper>
-					<Skills />
-					<Project />
-				</Wrapper>
-				<Wrapper>
-					<Education />
-					<Contact />
-				</Wrapper>
-				<Footer />
-			</Body>
-		</ThemeProvider>
+		<>
+			<ThemeProvider theme={darkTheme}>
+				<NavBar />
+				<Body>
+					<Hero />
+					<Wrapper>
+						<Skills />
+						<Project
+							setShowDetails={setShowDetails}
+							setCardData={setCardData}
+							setLayoutId={setLayoutId}
+						/>
+					</Wrapper>
+					<Wrapper>
+						<Education />
+						<Contact />
+					</Wrapper>
+					<Footer />
+					{showDetails && (
+						<OutSide>
+							<CardDetails
+								cardData={cardData}
+								setShowDetails={setShowDetails}
+								layoutId={layoutId}
+							/>
+						</OutSide>
+					)}
+				</Body>
+			</ThemeProvider>
+		</>
 	);
 };
 

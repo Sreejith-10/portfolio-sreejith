@@ -48,7 +48,6 @@ export const projectCard:CardData = [
 		images: [
 			"/images/projectImg/e-com.png",
 			"/images/projectImg/e-com2.png",
-			"/images/projectImg/e-com3.png",
 			"/images/projectImg/e-com4.png",
 			"/images/projectImg/e-com5.png",
 			"/images/projectImg/ecom6.png",

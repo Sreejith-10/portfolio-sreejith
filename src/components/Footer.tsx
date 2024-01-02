@@ -1,6 +1,7 @@
 import styled from "styled-components";
 import { PageTitle } from "../utils/CommonCompnents";
 import {
+    CopyrightOutlined,
     GitHub,
     Instagram,
     LinkedIn,
@@ -53,7 +54,7 @@ const FooterNavItems = styled.a`
 		color: ${({ theme }) => theme.primary};
 	}
 	@media (max-width: 600px) {
-		font-size: 15px;
+		font-size: 18px;
 	}
 `;
 const FooterIcons = styled.div`
@@ -65,6 +66,15 @@ const FooterIcons = styled.div`
 `;
 const FooterCopyRight = styled.div`
 	width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    font-size: 1.5rem;
+    color: lightgray;
+    @media (max-width: 600px) {
+		font-size: 1rem;
+	}
 `;
 
 const Footer = () => {
@@ -141,7 +151,9 @@ const Footer = () => {
                         />
                     </a>
                 </FooterIcons>
-                <FooterCopyRight></FooterCopyRight>
+                <FooterCopyRight>
+                    <CopyrightOutlined /> 2023 Sreejith. All rights reserved.
+                </FooterCopyRight>
             </FooterWrapper>
         </FooterContainer>
     );

@@ -1,10 +1,9 @@
 import styled from "styled-components";
-import { PageSub, PageTitle } from "../utils/CommonCompnents";
+import {PageSub, PageTitle} from "../utils/CommonCompnents";
 import Card from "./Card";
-import { projectCard } from "../constants/UserData";
-import { useState } from "react";
-import CardDetails from "./CardDetails";
-import { motion } from "framer-motion";
+import {projectCard} from "../constants/UserData";
+import {motion} from "framer-motion";
+import {CardData, SetState} from "../types/lib";
 
 const ProjectContainer = styled.div`
 	width: 100%;
@@ -41,62 +40,52 @@ const ProjectCardContainer = styled.ul`
 	}
 `;
 
-const Project = () => {
-	const [showDetails, setShowDetails] = useState<boolean>(false);
-	const [cardData, setCardData] = useState({
-		projectId: "",
-		projectImg: "",
-		projectTitle: "",
-		tech: [""],
-		description: "",
-		features: [""],
-		images: [""],
-		github: "",
-		live: "",
-	});
-	const [layoutId, setLayoutId] = useState<string>("")
+type ProjectProps = {
+	setShowDetails: SetState<boolean>;
+	setCardData: SetState<CardData>;
+	setLayoutId: SetState<string>;
+};
+
+const Project = ({setShowDetails, setCardData, setLayoutId}: ProjectProps) => {
 	const Fadein = {
-		hidden: { opacity: 0, x: 100 },
+		hidden: {opacity: 0, x: 100},
 		visible: (ind: number) => ({
-			opacity: 1, x: 0, transition: {
-				delay: .3 * ind
+			opacity: 1,
+			x: 0,
+			transition: {
+				delay: 0.3 * ind,
 			},
 		}),
 	};
 	return (
 		<div id="projects">
 			<ProjectContainer>
-				{showDetails && (
-						<CardDetails setShowDetails={setShowDetails} cardData={cardData} layoutId={layoutId}/>
-				)}
 				<ProjectWrapper>
 					<PageTitle>Projects</PageTitle>
 					<PageSub>These are the projects that i have done</PageSub>
 					<ProjectCardContainer>
-						{projectCard?.map((item, id) => {
-							return (
-								<motion.li
-									layoutId={item.projectId}
-									style={{ listStyle: "none" }}
-									variants={Fadein}
-									initial="hidden"
-									whileInView="visible"
-									viewport={{ once: true }}
-									custom={id}
-									key={id}>
-									<Card
-										item={item}
-										setShowDetails={setShowDetails}
-										setCardData={setCardData}
-										setLayoutId={setLayoutId}
-									/>
-								</motion.li>
-							);
-						})}
+						{projectCard?.map((item, id) => (
+							<motion.li
+								layoutId={item.projectId}
+								style={{listStyle: "none", cursor: "pointer"}}
+								variants={Fadein}
+								initial="hidden"
+								whileInView="visible"
+								viewport={{once: true}}
+								custom={id}
+								key={id}>
+								<Card
+									item={item}
+									setShowDetails={setShowDetails}
+									setCardData={setCardData}
+									setLayoutId={setLayoutId}
+								/>
+							</motion.li>
+						))}
 					</ProjectCardContainer>
 				</ProjectWrapper>
 			</ProjectContainer>
-		</div >
+		</div>
 	);
 };
 

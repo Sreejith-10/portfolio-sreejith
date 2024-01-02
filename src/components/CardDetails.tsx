@@ -90,6 +90,7 @@ const ViewCode = styled.a`
 	text-decoration: none;
 	color: white;
 	background: ${({ theme }) => theme.bg};
+	border: solid .5px #8400ff;
 `;
 const LiveApp = styled.a`
 	width: 300px;
@@ -163,8 +164,8 @@ const CardDetails = ({ setShowDetails, cardData, layoutId }: CardDetailsType) =>
 					<CardSubTitle>{cardData.description}</CardSubTitle>
 					<Typography marginTop={3}>Features</Typography>
 					<UL>
-						{cardData.features.map((item) => {
-							return <List>{item}</List>;
+						{cardData.features.map((item,id) => {
+							return <List key={id}>{item}</List>;
 						})}
 					</UL>
 					<Typography fontSize={20} marginTop={3}>
