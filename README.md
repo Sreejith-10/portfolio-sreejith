@@ -1,30 +1,56 @@
-# React + TypeScript + Vite
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+# Portfolio
 
-Currently, two official plugins are available:
+Personal portfolio made with react js
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Tech Stack
 
-## Expanding the ESLint configuration
+**Tech:** React, TypeScript, Material UI,Framer Motion
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
 
-- Configure the top-level `parserOptions` property like this:
+## Screenshots
+![Screenshot (22)](https://github.com/Sreejith-10/portfolio-sreejith/assets/132558235/aab145b7-303c-48e4-bd92-6f2fdbf36e9e)
 
-```js
-export default {
-  // other rules...
-  parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-  },
-}
+![Screenshot (23)](https://github.com/Sreejith-10/portfolio-sreejith/assets/132558235/f96b7836-60ff-465b-b84b-a5b3b8a57b25)
+
+![Screenshot (24)](https://github.com/Sreejith-10/portfolio-sreejith/assets/132558235/008421d5-7e84-4d57-ba15-d50304eeb381)
+
+![Screenshot (26)](https://github.com/Sreejith-10/portfolio-sreejith/assets/132558235/80e33c99-1ad9-4173-9e02-1f324eff5895)
+
+![Screenshot (25)](https://github.com/Sreejith-10/portfolio-sreejith/assets/132558235/fa4e89a7-dbd3-4349-ba9a-f811d6159b4d)
+
+
+## Live project
+
+Live : https://bit.ly/sreejithportfolio
+## Run Locally
+
+Clone the project
+
+```bash
+  git clone https://link-to-project
 ```
 
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+Go to the project directory
+
+```bash
+  cd my-project
+```
+
+Install dependencies
+
+```bash
+  npm install
+```
+
+Start the server
+
+```bash
+  npm run start
+```
+
+
+## Feedback
+
+If you have any feedback, please reach out to us at sreejithsree956266@gmail.com
+
