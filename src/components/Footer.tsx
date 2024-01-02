@@ -70,10 +70,12 @@ const FooterCopyRight = styled.div`
     align-items: center;
     justify-content: center;
     gap: 10px;
+    margin-bottom: 50px;
     font-size: 1.5rem;
     color: lightgray;
     @media (max-width: 600px) {
 		font-size: 1rem;
+        margin-bottom: 20px;
 	}
 `;
 

@@ -57,8 +57,6 @@ const App = () => {
 	});
 	const [layoutId, setLayoutId] = useState("");
 	const [showDetails, setShowDetails] = useState(false);
-	
-
 	return (
 		<>
 			<ThemeProvider theme={darkTheme}>
