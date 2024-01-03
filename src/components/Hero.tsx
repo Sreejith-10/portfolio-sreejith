@@ -36,6 +36,7 @@ const HeroLeft = styled.div`
 		flex-direction: column;
 		align-items: center;
 		justify-content: center;
+		z-index: 99;
 	}
 `;
 const HeroRight = styled.div`
