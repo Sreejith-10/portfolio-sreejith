@@ -59,7 +59,7 @@ const HeroImage = styled.img`
 	width: 100%;
 	height: 100%;
 `;
-const ResumeButton = styled.button`
+const ResumeButton = styled.a`
 	width: 50%;
 	background: linear-gradient(
 		225deg,
@@ -73,6 +73,7 @@ const ResumeButton = styled.button`
 	border-radius: 30px;
 	font-size: 1.5rem;
 	color: white;
+        text-decoration:none;
 	transition: all 0.2s ease-in-out 0s !important;
 	&:hover {
 		transform: scale(1.05);
@@ -125,7 +126,7 @@ const Hero = () => {
 							}}>
 							{userInfo.description}
 						</Typography>
-						<ResumeButton>Resume</ResumeButton>
+						<ResumeButton href="https://drive.google.com/file/d/1j0TGri2qeiA54czEZC2Usijn6rgyCQ6A/view?usp=drivesdk">Resume</ResumeButton>
 					</motion.div>
 				</HeroLeft>
 				<HeroRight>
