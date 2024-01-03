@@ -113,3 +113,11 @@ export const projectCard:CardData = [
 	},
 ];
 
+export const links = {
+	resume : "https://drive.google.com/file/d/1j0TGri2qeiA54czEZC2Usijn6rgyCQ6A/view?usp=drive_link",
+	github: "https://github.com/Sreejith-10",
+	linkdin:"http://www.linkdin.com/in/sreejith-t-s63858024a",
+	instagram:"https://www.instagram.com/unknown_us.e.r?igsh=OGQ5Dc@Ok@Za==",
+	twitter:"https://twitter.com/sreejith_101?t=iqPeUmq4m4Wi4Lk8Y6cjmA&s=09",
+	telegram:"https://t.me/killua1_0"
+}

@@ -4,6 +4,7 @@ import {Close, Menu} from "@mui/icons-material";
 import {useState} from "react";
 import {motion} from "framer-motion";
 import "../App.css";
+import { links } from "../constants/UserData";
 
 const NavBar = () => {
 	const [open, setOpen] = useState<boolean>(false);
@@ -182,7 +183,7 @@ const NavBar = () => {
 						<Link href="#education">Education</Link>
 						<Link href="#contact">Contact</Link>
 					</NavItems>
-					<GithubLink target="display" href="https://github.com/Sreejith-10">Github profile</GithubLink>
+					<GithubLink target="display" href={links.github}>Github profile</GithubLink>
 				</NavWrapper>
 				{open && (
 					<motion.ul
@@ -206,7 +207,7 @@ const NavBar = () => {
 						<motion.li style={{listStyle: "none"}} variants={child}>
 							<Link href="#contact">Contact</Link>
 						</motion.li>
-						<GithubLinkRes target="display" href="https://github.com/Sreejith-10">Github profile</GithubLinkRes>
+						<GithubLinkRes target="display" href={links.github}>Github profile</GithubLinkRes>
 					</motion.ul>
 				)}
 			</Nav>

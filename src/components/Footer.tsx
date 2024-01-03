@@ -8,6 +8,7 @@ import {
     Telegram,
     Twitter,
 } from "@mui/icons-material";
+import { links } from "../constants/UserData";
 
 const FooterContainer = styled.div`
 	width: 100%;
@@ -94,7 +95,7 @@ const Footer = () => {
                     <FooterNavItems href="#contact">Contact</FooterNavItems>
                 </FooterNav>
                 <FooterIcons>
-                    <a href="https://github.com/Sreejith-10">
+                    <a target="display" href={links.github}>
                         <GitHub
                             sx={{
                                 width: { lg: "45px", xs: "35px" },
@@ -105,7 +106,7 @@ const Footer = () => {
                             }}
                         />
                     </a>
-                    <a href="http://www.linkdin.com/in/sreejith-t-s63858024a">
+                    <a target="display" href={links.linkdin}>
                         <LinkedIn
                             sx={{
                                 width: { lg: "45px", xs: "35px" },
@@ -117,7 +118,7 @@ const Footer = () => {
                             }}
                         />
                     </a>
-                    <a href="https://www.instagram.com/unknown_us.e.r?igsh=OGQ5Dc@Ok@Za==">
+                    <a target="display" href={links.instagram}>
                         <Instagram
                             sx={{
                                 width: { lg: "45px", xs: "35px" },
@@ -129,7 +130,7 @@ const Footer = () => {
                             }}
                         />
                     </a>
-                    <a href="https://twitter.com/sreejith_101?t=iqPeUmq4m4Wi4Lk8Y6cjmA&s=09">
+                    <a target="display" href={links.twitter}>
                         <Twitter
                             sx={{
                                 width: { lg: "45px", xs: "35px" },
@@ -141,7 +142,7 @@ const Footer = () => {
                             }}
                         />
                     </a>
-                    <a href="https://t.me/killua1_0">
+                    <a target="display" href={links.telegram}>
                         <Telegram
                             sx={{
                                 width: { lg: "45px", xs: "35px" },

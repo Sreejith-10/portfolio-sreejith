@@ -164,7 +164,7 @@ const CardDetails = ({ setShowDetails, cardData, layoutId }: CardDetailsType) =>
 					<CardSubTitle>{cardData.description}</CardSubTitle>
 					<Typography marginTop={3}>Features</Typography>
 					<UL>
-						{cardData.features.map((item,id) => {
+						{cardData.features.map((item, id) => {
 							return <List key={id}>{item}</List>;
 						})}
 					</UL>
@@ -174,16 +174,16 @@ const CardDetails = ({ setShowDetails, cardData, layoutId }: CardDetailsType) =>
 					<ImgWrapper
 						onMouseEnter={() => setScrolling(true)}
 						onMouseLeave={() => setScrolling(false)}>
-						{cardData.images.map((item) => {
-							return <MiniImg src={item} />;
+						{cardData.images.map((item, id) => {
+							return <MiniImg src={item} key={id} />;
 						})}
 					</ImgWrapper>
 				</Info>
 				<ButtonSection>
-					<ViewCode href={cardData.github}>
+					<ViewCode target="display" href={cardData.github}>
 						View Code <GitHub sx={{ fill: "#854CE6" }} />
 					</ViewCode>
-					<LiveApp href={cardData.live}>View Live App</LiveApp>
+					<LiveApp href={cardData.live} target="display">View Live App</LiveApp>
 				</ButtonSection>
 			</motion.div>
 		</BOX>

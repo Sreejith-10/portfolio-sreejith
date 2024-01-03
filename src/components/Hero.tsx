@@ -1,7 +1,7 @@
 import { Typography } from "@mui/material";
 import styled from "styled-components";
 import { darkTheme } from "../utils/Theme";
-import { userInfo } from "../constants/UserData";
+import { links, userInfo } from "../constants/UserData";
 import { motion } from "framer-motion";
 import "../App.css"
 
@@ -60,7 +60,6 @@ const HeroImage = styled.img`
 	height: 100%;
 `;
 const ResumeButton = styled.a`
-	width: 50%;
 	background: linear-gradient(
 		225deg,
 		rgb(132, 0, 255) 0%,
@@ -90,7 +89,7 @@ const Hero = () => {
 			<HeroWrapper>
 				<HeroLeft>
 					<motion.div
-					className="left-hero"
+						className="left-hero"
 						variants={{
 							hidden: { opacity: 0, x: -75 },
 							visible: { opacity: 1, x: 0 },
@@ -121,12 +120,13 @@ const Hero = () => {
 							color={"grey"}
 							mt={5}
 							sx={{
+								marginBottom: { lg: "50px", xs: "10px" },
 								fontSize: { xs: "20px", lg: "1.8rem" },
 								textAlign: { xs: "center", lg: "start" },
 							}}>
 							{userInfo.description}
 						</Typography>
-						<ResumeButton href="https://drive.google.com/file/d/1j0TGri2qeiA54czEZC2Usijn6rgyCQ6A/view?usp=drivesdk">Resume</ResumeButton>
+						<ResumeButton target="display" href={links.resume}>Resume</ResumeButton>
 					</motion.div>
 				</HeroLeft>
 				<HeroRight>
