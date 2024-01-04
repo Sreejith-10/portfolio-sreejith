@@ -14,7 +14,7 @@ export const userInfo = {
 	name: "Sreejith",
 	role: "Front End Developer",
 	description:
-		"A passoionate and motivated individual eager to embark on a journy as a Fron-End Developer. With a strong foundation in HTML,CSS,JavaScript,React Js,I am exicted to learn and grow in the filed of web develpoment",
+		"A passoionate and motivated individual eager to embark on a journy as a Front-End Developer. With a strong foundation in HTML,CSS,JavaScript,React Js,I am exicted to learn and grow in the filed of web develpoment",
 	reusme: "link",
 };
 
