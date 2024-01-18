@@ -7,21 +7,12 @@ body {
 }
 
 .SkillBox {
-	width: 60%;
-	height: auto;
-	border: #f2f3f47f solid 1px;
-	border-radius: 20px;
-	padding: 20px;
-	box-shadow: rgba(23, 92, 230, 0.15) 0px 4px 24px;
 	display: flex;
-	flex-wrap: wrap;
-	align-items: center;
-	justify-content: center;
-	gap: 20px;
-	@media (max-width: 600px) {
-		width: 95%;
-		border: grey solid 1px;
-	}
+    -webkit-box-pack: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-bottom: 20px;
 }
 
 .CardContainer {

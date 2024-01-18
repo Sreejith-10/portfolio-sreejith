@@ -1,35 +1,59 @@
- type CardData = {
-    projectId: string;
-    projectImg: string;
-    projectTitle: string;
-    tech: string[];
-    description: string;
-    features: string[];
-    images: string[];
-    github: string;
-    live: string;
-}[]
+type CardData = {
+	projectId: string;
+	projectImg: string;
+	projectTitle: string;
+	tech: string[];
+	description: string;
+	features: string[];
+	images: string[];
+	github: string;
+	live: string;
+}[];
 
 export const userInfo = {
 	name: "Sreejith",
-	role: "Front End Developer",
+	role: "MERN Stack Developer",
 	description:
-		"A passoionate and motivated individual eager to embark on a journy as a Fron-End Developer. With a strong foundation in HTML,CSS,JavaScript,React Js,I am exicted to learn and grow in the filed of web develpoment",
-	reusme: "link",
+		"A passoionate and motivated individual eager to embark on a journy as a Web Developer. With a strong foundation in front end and back end technologies,i'm aiting for an opertunity to show my skill in the web develpoment field. I am exicted to learn and grow in the field of web development",
+	reusme: "https://drive.google.com/file/d/1jRDf2_tpbr4RP9WYpn5yPy7H_sqpLedF/view?usp=drivesdk",
 };
 
 export const skills = [
-	{skill: "JavaScript", link: "/images/js.png"},
-	{skill: "TypeScript", link: "/images/ts.png"},
-	{skill: "React Js", link: "/images/react.png"},
-	{skill: "Redux", link: "/images/redux.png"},
-	{skill: "HTML", link: "/images/html.png"},
-	{skill: "CSS", link: "/images/css.png"},
-	{skill: "Tailwind", link: "/images/tailwind.png"},
-	{skill: "SASS", link: "/images/pngwing.com.png"},
+	{
+		skillName:"Front end",
+		skillArray: [
+			{skill: "JavaScript", link: "/images/js.png"},
+			{skill: "TypeScript", link: "/images/ts.png"},
+			{skill: "React Js", link: "/images/react.png"},
+			{skill: "Redux", link: "/images/redux.png"},
+			{skill: "HTML", link: "/images/html.png"},
+			{skill: "CSS", link: "/images/css.png"},
+			{skill: "Tailwind", link: "/images/tailwind.png"},
+			{skill: "SASS", link: "/images/pngwing.com.png"},
+		],
+	},
+	{
+		skillName:"Back end",
+		skillArray: [
+			{
+				skill: "Node js",
+				link: "/images/nodejs-icon.svg",
+			},
+			{
+				skill: "express",
+				link: "/images/express-109.svg",
+			},
+			{skill: "MongoDB", link: "/images/mongodb-icon-2.svg"},
+			{skill: "Firebase", link: "/images/Firebase.png"},
+		],
+	},
+	{
+		skillName:"Development Tools"
+		,skillArray: [{skill: "Github", link: "/images/github-logo.png"},{skill: "Vscode", link: "/images/1705574507137.png"}],
+	},
 ];
 
-export const projectCard:CardData = [
+export const projectCard: CardData = [
 	{
 		projectId: "git_1",
 		projectImg: "/images/projectImg/e-com.png",
@@ -114,10 +138,11 @@ export const projectCard:CardData = [
 ];
 
 export const links = {
-	resume : "https://drive.google.com/file/d/1j0TGri2qeiA54czEZC2Usijn6rgyCQ6A/view?usp=drive_link",
+	resume:
+		"https://drive.google.com/file/d/1jRDf2_tpbr4RP9WYpn5yPy7H_sqpLedF/view?usp=drivesdk",
 	github: "https://github.com/Sreejith-10",
-	linkdin:"http://www.linkdin.com/in/sreejith-t-s63858024a",
-	instagram:"https://www.instagram.com/unknown_us.e.r?igsh=OGQ5Dc@Ok@Za==",
-	twitter:"https://twitter.com/sreejith_101?t=iqPeUmq4m4Wi4Lk8Y6cjmA&s=09",
-	telegram:"https://t.me/killua1_0"
-}
+	linkdin: "http://www.linkdin.com/in/sreejith-t-s63858024a",
+	instagram: "https://www.instagram.com/unknown_us.e.r?igsh=OGQ5Dc@Ok@Za==",
+	twitter: "https://twitter.com/sreejith_101?t=iqPeUmq4m4Wi4Lk8Y6cjmA&s=09",
+	telegram: "https://t.me/killua1_0",
+};

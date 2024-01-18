@@ -24,15 +24,15 @@ const ProjectWrapper = styled.div`
 		width: 90%;
 	}
 `;
-const ProjectCardContainer = styled.ul`
-	width: auto;
-	height: 100%;
+const ProjectCardContainer = styled.div`
 	display: flex;
-	flex-wrap: wrap;
-	align-items: center;
+	-webkit-box-pack: center;
 	justify-content: center;
+	-webkit-box-align: center;
+	align-items: center;
+	gap: 28px;
+	flex-wrap: wrap;
 	margin: 100px 0px;
-	gap: 20px;
 	@media (max-width: 600px) {
 		flex-direction: column;
 		margin-top: 50px;

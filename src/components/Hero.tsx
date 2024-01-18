@@ -1,9 +1,9 @@
-import { Typography } from "@mui/material";
+import {Typography} from "@mui/material";
 import styled from "styled-components";
-import { darkTheme } from "../utils/Theme";
-import { links, userInfo } from "../constants/UserData";
-import { motion } from "framer-motion";
-import "../App.css"
+import {darkTheme} from "../utils/Theme";
+import {links, userInfo} from "../constants/UserData";
+import {motion} from "framer-motion";
+import "../App.css";
 
 const HeroContainer = styled.div`
 	width: 100%;
@@ -24,6 +24,9 @@ const HeroWrapper = styled.div`
 		align-items: center;
 		justify-content: center;
 		padding: 20px 20px;
+	}
+	@media (max-width: 940px) {
+		width: 100%;
 	}
 `;
 const HeroLeft = styled.div`
@@ -73,7 +76,7 @@ const ResumeButton = styled.a`
 	border-radius: 30px;
 	font-size: 1.5rem;
 	color: white;
-        text-decoration:none;
+	text-decoration: none;
 	transition: all 0.2s ease-in-out 0s !important;
 	&:hover {
 		transform: scale(1.05);
@@ -81,6 +84,8 @@ const ResumeButton = styled.a`
 	@media (max-width: 600px) {
 		margin-top: 35px;
 		margin-bottom: 25px;
+	}
+	@media (max-width: 600px) {
 	}
 `;
 
@@ -92,16 +97,16 @@ const Hero = () => {
 					<motion.div
 						className="left-hero"
 						variants={{
-							hidden: { opacity: 0, x: -75 },
-							visible: { opacity: 1, x: 0 },
+							hidden: {opacity: 0, x: -75},
+							visible: {opacity: 1, x: 0},
 						}}
 						initial="hidden"
 						animate="visible"
-						transition={{ duration: 1, delay: 1 }} >
+						transition={{duration: 1, delay: 1}}>
 						<Title>Hi,I am {userInfo.name}</Title>
 						<Typography
 							variant="h4"
-							sx={{ color: "white", fontSize: { xs: 25 } }}
+							sx={{color: "white", fontSize: {xs: 25}}}
 							fontWeight={600}
 							display={"flex"}
 							gap={2}
@@ -112,7 +117,7 @@ const Hero = () => {
 								variant="h4"
 								color={darkTheme.primary}
 								fontWeight={700}
-								sx={{ fontSize: { xs: 25 } }}>
+								sx={{fontSize: {xs: 25}}}>
 								{userInfo.role}
 							</Typography>
 						</Typography>
@@ -121,13 +126,16 @@ const Hero = () => {
 							color={"grey"}
 							mt={5}
 							sx={{
-								marginBottom: { lg: "50px", xs: "10px" },
-								fontSize: { xs: "20px", lg: "1.8rem" },
-								textAlign: { xs: "center", lg: "start" },
+								marginTop: {lg: "100px",md:"100px"},
+								marginBottom: {lg: "50px", xs: "10px"},
+								fontSize: {xs: "20px", lg: "1.8rem"},
+								textAlign: {xs: "center", lg: "start"},
 							}}>
 							{userInfo.description}
 						</Typography>
-						<ResumeButton target="display" href={links.resume}>Resume</ResumeButton>
+						<ResumeButton target="display" href={links.resume}>
+							Resume
+						</ResumeButton>
 					</motion.div>
 				</HeroLeft>
 				<HeroRight>
