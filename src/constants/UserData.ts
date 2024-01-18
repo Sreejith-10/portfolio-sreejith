@@ -14,7 +14,7 @@ export const userInfo = {
 	name: "Sreejith",
 	role: "MERN Stack Developer",
 	description:
-		"A passoionate and motivated individual eager to embark on a journy as a Web Developer. With a strong foundation in front end and back end technologies,i'm aiting for an opertunity to show my skill in the web develpoment field. I am exicted to learn and grow in the field of web development",
+		"A passoionate and motivated individual eager to embark on a journy as a Fron-End Developer. With a strong foundation in both front end and backend,i'm waiting for opertunities to show my skills.I am exicted to learn and grow in the filed of web develpoment",
 	reusme: "https://drive.google.com/file/d/1jRDf2_tpbr4RP9WYpn5yPy7H_sqpLedF/view?usp=drivesdk",
 };
 
@@ -141,8 +141,8 @@ export const links = {
 	resume:
 		"https://drive.google.com/file/d/1jRDf2_tpbr4RP9WYpn5yPy7H_sqpLedF/view?usp=drivesdk",
 	github: "https://github.com/Sreejith-10",
-	linkdin: "http://www.linkdin.com/in/sreejith-t-s63858024a",
-	instagram: "https://www.instagram.com/unknown_us.e.r?igsh=OGQ5Dc@Ok@Za==",
-	twitter: "https://twitter.com/sreejith_101?t=iqPeUmq4m4Wi4Lk8Y6cjmA&s=09",
-	telegram: "https://t.me/killua1_0",
-};
+	linkdin:"http://www.linkdin.com/in/sreejith-t-s63858024a",
+	instagram:"https://www.instagram.com/unknown_us.e.r?igsh=OGQ5Dc@Ok@Za==",
+	twitter:"https://twitter.com/sreejith_101?t=iqPeUmq4m4Wi4Lk8Y6cjmA&s=09",
+	telegram:"https://t.me/killua1_0"
+}
