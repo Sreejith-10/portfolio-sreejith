@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import {PageSub, PageTitle} from "../utils/CommonCompnents";
 import Card from "./Card";
-import {projectCard} from "../constants/UserData";
+import {projectCard, workingProjects} from "../constants/UserData";
 import {motion} from "framer-motion";
 import {CardData, SetState} from "../types/lib";
 
@@ -83,6 +83,31 @@ const Project = ({setShowDetails, setCardData, setLayoutId}: ProjectProps) => {
 							</motion.li>
 						))}
 					</ProjectCardContainer>
+					<PageTitle>On going projects</PageTitle>
+					<PageSub>I am corrently working on these projects</PageSub>
+					<ProjectCardContainer>
+						{workingProjects?.map((item, id) => (
+							<motion.li
+								layoutId={item.projectId}
+								style={{listStyle: "none", cursor: "pointer"}}
+								variants={Fadein}
+								initial="hidden"
+								whileInView="visible"
+								viewport={{once: true}}
+								custom={id}
+								key={id}>
+								<Card
+									item={item}
+									setShowDetails={setShowDetails}
+									setCardData={setCardData}
+									setLayoutId={setLayoutId}
+								/>
+							</motion.li>
+						))}
+					</ProjectCardContainer>
+					<br />
+					<br />
+					<br />
 				</ProjectWrapper>
 			</ProjectContainer>
 		</div>

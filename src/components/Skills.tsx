@@ -134,6 +134,7 @@ const Skills = () => {
 								className="SkillBox"
 								variants={container}
 								initial="hidden"
+								viewport={{once: true}}
 								whileInView={"visible"}>
 								{items.skillArray.map((arrItem, index) => (
 									<motion.li

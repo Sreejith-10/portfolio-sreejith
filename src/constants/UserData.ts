@@ -137,6 +137,33 @@ export const projectCard: CardData = [
 	},
 ];
 
+export const workingProjects = [
+	{
+		projectId : "git-working-1",
+		projectImg: "/images/projectImg/tic.png",
+		projectTitle: "Blogify Hub Front-end",
+		tech: ["React JS","TypeScript","Tailwind CSS","Redux","Socket io"],
+		description:
+			"Blogify hub is a blogging platform for users to share there thoughts on thechnology,sports,entertainment,travel,etc. React js is used to bulild the frontend of this application and for managing states redux is used. Webscokets are yoused for realtime notifications",
+		features: ["in develpoment"],
+		images: ["/images/projectImg/tic.png"],
+		github: "https://github.com/Sreejith-10/Blogifyhu",
+		live: "under develpoment",
+	},
+	{
+		projectId : "git-working-2",
+		projectImg: "/images/projectImg/tic.png",
+		projectTitle: "Blogify Hub Back-end",
+		tech: ["Node js","Express","MongoDB","mongoose"],
+		description:
+			"The backend is builded in mvc archtecture. Express the js backend framework is used here. For authentication JWT is used",
+		features: ["in develpoment"],
+		images: ["/images/projectImg/tic.png"],
+		github: "https://github.com/Sreejith-10/Blogifyhu",
+		live: "under develpoment",
+	}
+]
+
 export const links = {
 	resume:
 		"https://drive.google.com/file/d/1jRDf2_tpbr4RP9WYpn5yPy7H_sqpLedF/view?usp=drivesdk",
