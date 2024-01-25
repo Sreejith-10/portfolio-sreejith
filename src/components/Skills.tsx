@@ -60,12 +60,16 @@ const SkillIcon = styled.img`
 const CardTitle = styled.div`
 	width: 100%;
 	height: auto;
+	text-align: center;
 	display: flex;
 	align-items: center;
 	justify-content: center;
 	font-size: 2.4rem;
 	font-weight: 500;
 	color: ${({theme}) => theme.text_primary};
+	@media (max-width:600px) {
+		margin-bottom: 10px;
+	}
 `;
 
 const CardContainer = styled.div`
@@ -77,6 +81,7 @@ const CardContainer = styled.div`
 	border-radius: 16px;
 	padding: 18px 36px;
 `;
+
 
 const container = {
 	hidden: {opacity: 0, scale: 0},
@@ -133,13 +138,14 @@ const Skills = () => {
 								}}
 								className="SkillBox"
 								variants={container}
+								viewport={{once:true}}
 								initial="hidden"
-								viewport={{once: true}}
 								whileInView={"visible"}>
 								{items.skillArray.map((arrItem, index) => (
 									<motion.li
 										key={index}
 										variants={item}
+										viewport={{once: true}}
 										style={{
 											display: "flex",
 											alignItems: "center",

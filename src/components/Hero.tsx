@@ -126,7 +126,6 @@ const Hero = () => {
 							color={"grey"}
 							mt={5}
 							sx={{
-								marginTop: {lg: "100px",md:"100px"},
 								marginBottom: {lg: "50px", xs: "10px"},
 								fontSize: {xs: "20px", lg: "1.8rem"},
 								textAlign: {xs: "center", lg: "start"},

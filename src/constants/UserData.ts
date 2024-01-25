@@ -14,7 +14,7 @@ export const userInfo = {
 	name: "Sreejith",
 	role: "MERN Stack Developer",
 	description:
-		"A passoionate and motivated individual eager to embark on a journy as a Fron-End Developer. With a strong foundation in both front end and backend,i'm waiting for opertunities to show my skills.I am exicted to learn and grow in the filed of web develpoment",
+		"A self taught,passoionate and motivated individual eager to embark on a journey as a Web Develper. With a strong foundation in both front end and backend,i'm waiting for opportunity to show my skills.I am exicted to learn and grow in the filed of web develpoment.",
 	reusme: "https://drive.google.com/file/d/1jRDf2_tpbr4RP9WYpn5yPy7H_sqpLedF/view?usp=drivesdk",
 };
 
@@ -58,7 +58,7 @@ export const projectCard: CardData = [
 		projectId: "git_1",
 		projectImg: "/images/projectImg/e-com.png",
 		projectTitle: "E-commerce website",
-		tech: ["React JS", "JavaScript", "Tailwind", "Redux", "Firebase"],
+		tech: ["ReactJs", "JavaScript", "TailwindCSS", "Redux", "Firebase"],
 		description:
 			"This is an e-commerce website made with react and firebase with all basic features needed in an e-commerce website.",
 		features: [
@@ -83,7 +83,7 @@ export const projectCard: CardData = [
 		projectId: "git_2",
 		projectImg: "/images/projectImg/chat1.png",
 		projectTitle: "Chat Zone",
-		tech: ["React JS", "JavaScript", "Tailwind", "Firebase"],
+		tech: ["ReactJS", "JavaScript", "Tailwind", "Firebase"],
 		description:
 			"Chat zone is an web application made with react and firebase which users can add friends and message them.",
 		features: ["Real time chat", "Search friends", "Upload images"],
@@ -95,7 +95,7 @@ export const projectCard: CardData = [
 		projectId: "git_3",
 		projectImg: "/images/projectImg/food.png",
 		projectTitle: "Food-Recipe App",
-		tech: ["React JS", "HTML", "CSS"],
+		tech: ["ReactJS", "HTML", "CSS"],
 		description:
 			"This is project helps users to find there favorite recipes with the help of MealDB api.Users can filter dishes,serach dishes,etc.",
 		features: [
@@ -115,7 +115,7 @@ export const projectCard: CardData = [
 		projectId: "git_4",
 		projectImg: "/images/projectImg/todo.png",
 		projectTitle: "Todo App",
-		tech: ["React JS", "HTML", "CSS"],
+		tech: ["ReactJS", "HTML", "CSS"],
 		description:
 			"This is a simple todo app made with react js with crud operations",
 		features: ["Basic Crud operations like add task,edit,delete"],
@@ -127,7 +127,7 @@ export const projectCard: CardData = [
 		projectId: "git_5",
 		projectImg: "/images/projectImg/tic.png",
 		projectTitle: "Tic-Tac-Toe",
-		tech: ["React JS", "HTML", "CSS"],
+		tech: ["ReactJS", "HTML", "CSS"],
 		description:
 			"A fun tic-tac-toe game made for having a fun time with friends.The players can see live scores and winners",
 		features: ["Score board"],
@@ -142,7 +142,7 @@ export const workingProjects = [
 		projectId : "git-working-1",
 		projectImg: "/images/projectImg/tic.png",
 		projectTitle: "Blogify Hub Front-end",
-		tech: ["React JS","TypeScript","Tailwind CSS","Redux","Socket io"],
+		tech: ["ReactJs","TypeScript","TailwindCSS","Redux","Socket.io"],
 		description:
 			"Blogify hub is a blogging platform for users to share there thoughts on thechnology,sports,entertainment,travel,etc. React js is used to bulild the frontend of this application and for managing states redux is used. Webscokets are yoused for realtime notifications",
 		features: ["in develpoment"],
@@ -154,7 +154,7 @@ export const workingProjects = [
 		projectId : "git-working-2",
 		projectImg: "/images/projectImg/tic.png",
 		projectTitle: "Blogify Hub Back-end",
-		tech: ["Node js","Express","MongoDB","mongoose"],
+		tech: ["NodeJs","Express","MongoDB","mongoose"],
 		description:
 			"The backend is builded in mvc archtecture. Express the js backend framework is used here. For authentication JWT is used",
 		features: ["in develpoment"],
