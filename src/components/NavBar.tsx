@@ -4,7 +4,7 @@ import {Close, Menu} from "@mui/icons-material";
 import {useState} from "react";
 import {motion} from "framer-motion";
 import "../App.css";
-import { links } from "../constants/UserData";
+import {links} from "../constants/UserData";
 
 const NavBar = () => {
 	const [open, setOpen] = useState<boolean>(false);
@@ -75,21 +75,34 @@ const NavBar = () => {
 		}
 	`;
 	const GithubLink = styled.a`
-		background: ${({theme}) => theme.bg};
+		/* background: ${({theme}) => theme.bg}; */
 		width: 250px;
 		max-width: 50%;
 		padding: 10px 20px;
-		color: ${({theme}) => theme.primary};
+		color: ${({theme}) => theme.text_primary};
 		border: solid 2px #854ce6;
-		border-radius: 50px;
+		border-radius: 10px;
 		font-size: 1.2rem;
 		font-weight: 500;
-		transition: ease 0.6s;
+		z-index: 50;
 		text-align: center;
 		text-decoration: none;
-		&:hover {
-			background: #854ce6;
-			color: white;
+		position: relative;
+		isolation: isolate;
+		&::after {
+			content: "";
+			position: absolute;
+			z-index: -1;
+			/* border-radius: 50px; */
+			background: ${({theme}) => theme.primary};
+			inset: 0;
+			scale: 0 1;
+			transform-origin: right;
+			transition: scale 450ms;
+		}
+		&:hover::after,&:focus-visible::after {
+			scale:1 1;
+			transform-origin: left;
 		}
 		@media (max-width: 992px) {
 			display: none;
@@ -97,7 +110,6 @@ const NavBar = () => {
 		@media (max-width: 1366px) {
 			display: none;
 		}
-		
 	`;
 	const GithubLinkRes = styled.a`
 		background: ${({theme}) => theme.bg};
@@ -153,6 +165,7 @@ const NavBar = () => {
 			<Nav>
 				<NavWrapper>
 					<NavIconContainer>
+						
 						<Title>Portfolio</Title>
 					</NavIconContainer>
 					<MobileNav>
@@ -183,7 +196,9 @@ const NavBar = () => {
 						<Link href="#education">Education</Link>
 						<Link href="#contact">Contact</Link>
 					</NavItems>
-					<GithubLink target="display" href={links.github}>Github profile</GithubLink>
+					<GithubLink target="display" href={links.github}>
+						Github profile
+					</GithubLink>
 				</NavWrapper>
 				{open && (
 					<motion.ul
@@ -207,7 +222,9 @@ const NavBar = () => {
 						<motion.li style={{listStyle: "none"}} variants={child}>
 							<Link href="#contact">Contact</Link>
 						</motion.li>
-						<GithubLinkRes target="display" href={links.github}>Github profile</GithubLinkRes>
+						<GithubLinkRes target="display" href={links.github}>
+							Github profile
+						</GithubLinkRes>
 					</motion.ul>
 				)}
 			</Nav>

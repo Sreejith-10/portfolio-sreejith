@@ -86,24 +86,30 @@ const Project = ({setShowDetails, setCardData, setLayoutId}: ProjectProps) => {
 					<PageTitle>On going projects</PageTitle>
 					<PageSub>I am corrently working on these projects</PageSub>
 					<ProjectCardContainer>
-						{workingProjects?.map((item, id) => (
-							<motion.li
-								layoutId={item.projectId}
-								style={{listStyle: "none", cursor: "pointer"}}
-								variants={Fadein}
-								initial="hidden"
-								whileInView="visible"
-								viewport={{once: true}}
-								custom={id}
-								key={id}>
-								<Card
-									item={item}
-									setShowDetails={setShowDetails}
-									setCardData={setCardData}
-									setLayoutId={setLayoutId}
-								/>
-							</motion.li>
-						))}
+						{workingProjects.length === 0 ? (
+							<PageSub style={{fontSize: "30px"}}>
+								Not working on any projects!
+							</PageSub>
+						) : (
+							workingProjects?.map((item, id) => (
+								<motion.li
+									layoutId={item?.projectId}
+									style={{listStyle: "none", cursor: "pointer"}}
+									variants={Fadein}
+									initial="hidden"
+									whileInView="visible"
+									viewport={{once: true}}
+									custom={id}
+									key={id}>
+									<Card
+										item={item}
+										setShowDetails={setShowDetails}
+										setCardData={setCardData}
+										setLayoutId={setLayoutId}
+									/>
+								</motion.li>
+							))
+						)}
 					</ProjectCardContainer>
 					<br />
 					<br />

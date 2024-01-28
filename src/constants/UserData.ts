@@ -10,17 +10,30 @@ type CardData = {
 	live: string;
 }[];
 
+type WorkingProjectsType = {
+	projectId?: string;
+	projectImg?: string;
+	projectTitle?: string;
+	tech?: string[];
+	description?: string;
+	features?: string[];
+	images?: string[];
+	github?: string;
+	live?: string;
+}[];
+
 export const userInfo = {
 	name: "Sreejith",
 	role: "MERN Stack Developer",
 	description:
 		"A self taught,passoionate and motivated individual eager to embark on a journey as a Web Develper. With a strong foundation in both front end and backend,i'm waiting for opportunity to show my skills.I am exicted to learn and grow in the filed of web develpoment.",
-	reusme: "https://drive.google.com/file/d/1jRDf2_tpbr4RP9WYpn5yPy7H_sqpLedF/view?usp=drivesdk",
+	reusme:
+		"https://drive.google.com/file/d/1jRDf2_tpbr4RP9WYpn5yPy7H_sqpLedF/view?usp=drivesdk",
 };
 
 export const skills = [
 	{
-		skillName:"Front end",
+		skillName: "Front end",
 		skillArray: [
 			{skill: "JavaScript", link: "/images/js.png"},
 			{skill: "TypeScript", link: "/images/ts.png"},
@@ -33,7 +46,7 @@ export const skills = [
 		],
 	},
 	{
-		skillName:"Back end",
+		skillName: "Back end",
 		skillArray: [
 			{
 				skill: "Node js",
@@ -48,12 +61,53 @@ export const skills = [
 		],
 	},
 	{
-		skillName:"Development Tools"
-		,skillArray: [{skill: "Github", link: "/images/github-logo.png"},{skill: "Vscode", link: "/images/1705574507137.png"}],
+		skillName: "Development Tools",
+		skillArray: [
+			{skill: "Github", link: "/images/github-logo.png"},
+			{skill: "Vscode", link: "/images/1705574507137.png"},
+		],
 	},
 ];
 
 export const projectCard: CardData = [
+	{
+		projectId: "git_0",
+		projectImg: "/images/projectImg/blogify (1).png",
+		projectTitle: "Blogify Hub",
+		tech: [
+			"ReactJS",
+			"TypeScript",
+			"TailwindCSS",
+			"NodeJS",
+			"Express",
+			"MongoDB",
+			"Mongoose",
+		],
+		description:
+			"A blgoing webisite to share moments in life.A place to get latest info about thechnology,travel,etc",
+		features: [
+			"MVC Architecture",
+			"Interations between users",
+			"Follow favorite bloggers",
+			"Push notifications",
+			"React to the posts",
+		],
+		github: "",
+		images: [
+			"/images/projectImg/blogify (1).png",
+			"/images/projectImg/blogify (2).png",
+			"/images/projectImg/blogify (3).png",
+			"/images/projectImg/blogify (4).png",
+			"/images/projectImg/blogify (5).png",
+			"/images/projectImg/blogify (6).png",
+			"/images/projectImg/blogify (7).png",
+			"/images/projectImg/blogify (8).png",
+			"/images/projectImg/blogify 3.png",
+			"/images/projectImg/blogify 4",
+			"/images/projectImg/bg-res (1).png",
+		],
+		live: "",
+	},
 	{
 		projectId: "git_1",
 		projectImg: "/images/projectImg/e-com.png",
@@ -137,39 +191,14 @@ export const projectCard: CardData = [
 	},
 ];
 
-export const workingProjects = [
-	{
-		projectId : "git-working-1",
-		projectImg: "/images/projectImg/tic.png",
-		projectTitle: "Blogify Hub Front-end",
-		tech: ["ReactJs","TypeScript","TailwindCSS","Redux","Socket.io"],
-		description:
-			"Blogify hub is a blogging platform for users to share there thoughts on thechnology,sports,entertainment,travel,etc. React js is used to bulild the frontend of this application and for managing states redux is used. Webscokets are yoused for realtime notifications",
-		features: ["in develpoment"],
-		images: ["/images/projectImg/tic.png"],
-		github: "https://github.com/Sreejith-10/Blogifyhu",
-		live: "under develpoment",
-	},
-	{
-		projectId : "git-working-2",
-		projectImg: "/images/projectImg/tic.png",
-		projectTitle: "Blogify Hub Back-end",
-		tech: ["NodeJs","Express","MongoDB","mongoose"],
-		description:
-			"The backend is builded in mvc archtecture. Express the js backend framework is used here. For authentication JWT is used",
-		features: ["in develpoment"],
-		images: ["/images/projectImg/tic.png"],
-		github: "https://github.com/Sreejith-10/Blogifyhu",
-		live: "under develpoment",
-	}
-]
+export const workingProjects : WorkingProjectsType = [];
 
 export const links = {
 	resume:
 		"https://drive.google.com/file/d/1jRDf2_tpbr4RP9WYpn5yPy7H_sqpLedF/view?usp=drivesdk",
 	github: "https://github.com/Sreejith-10",
-	linkdin:"http://www.linkdin.com/in/sreejith-t-s63858024a",
-	instagram:"https://www.instagram.com/unknown_us.e.r?igsh=OGQ5Dc@Ok@Za==",
-	twitter:"https://twitter.com/sreejith_101?t=iqPeUmq4m4Wi4Lk8Y6cjmA&s=09",
-	telegram:"https://t.me/killua1_0"
-}
+	linkdin: "http://www.linkdin.com/in/sreejith-t-s63858024a",
+	instagram: "https://www.instagram.com/unknown_us.e.r?igsh=OGQ5Dc@Ok@Za==",
+	twitter: "https://twitter.com/sreejith_101?t=iqPeUmq4m4Wi4Lk8Y6cjmA&s=09",
+	telegram: "https://t.me/killua1_0",
+};

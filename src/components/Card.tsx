@@ -4,11 +4,11 @@ import {CardImage} from "../utils/CommonCompnents";
 import {CardData, SetState} from "../types/lib";
 
 type ItemType = {
-	projectId: string;
-	projectImg: string;
-	projectTitle: string;
-	tech: string[];
-	description: string;
+	projectId?: string | undefined;
+	projectImg?: string | undefined;
+	projectTitle?: string | undefined;
+	tech?: string[] | undefined;
+	description?: string | undefined;
 };
 
 type CardType = {
@@ -92,7 +92,7 @@ const Card = ({item, setShowDetails, setCardData, setLayoutId}: CardType) => {
 		<ProjectCard onClick={() => cardClickHandler(item)}>
 			<CardImage src={item.projectImg} />
 			<CardTech>
-				{item?.tech.map((t, id) => {
+				{item?.tech?.map((t, id) => {
 					return <Span key={id}>{t}</Span>;
 				})}
 			</CardTech>
