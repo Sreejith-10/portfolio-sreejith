@@ -93,7 +93,7 @@ export const projectCard: CardData = [
 			"Push notifications",
 			"React to the posts",
 		],
-		github: "",
+		github: "https://github.com/Sreejith-10/BlogifyHub-frontend",
 		images: [
 			"/images/projectImg/blogify (1).png",
 			"/images/projectImg/blogify (2).png",
@@ -107,7 +107,7 @@ export const projectCard: CardData = [
 			"/images/projectImg/blogify 4",
 			"/images/projectImg/bg-res (1).png",
 		],
-		live: "",
+		live: "https://blogify-hub-frontend.vercel.app/",
 	},
 	{
 		projectId: "git_1",
@@ -205,6 +205,8 @@ export const workingProjects: WorkingProjectsType = [
 		],
 		projectImg: "/images/projectImg/next-wather-app.png",
 		tech: ["Next Js", "Daisy UI", "Oneweathermap"],
+		live: "https://my-next-weather-app.vercel.app/",
+		github: "https://github.com/Sreejith-10/weather-app-next",
 	},
 ];
 
