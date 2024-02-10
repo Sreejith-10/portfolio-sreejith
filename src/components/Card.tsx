@@ -55,6 +55,7 @@ const CardTech = styled.div`
 const Span = styled.span`
 	font-size: 18px;
 	font-weight: 400;
+	white-space: nowrap;
 	display: flex;
 	text-align: center;
 	color: ${({theme}) => theme.primary};
@@ -90,7 +91,7 @@ const Card = ({item, setShowDetails, setCardData, setLayoutId}: CardType) => {
 	};
 	return (
 		<ProjectCard onClick={() => cardClickHandler(item)}>
-			<CardImage src={item.projectImg} />
+			<CardImage alt="not found" src={item.projectImg} />
 			<CardTech>
 				{item?.tech?.map((t, id) => {
 					return <Span key={id}>{t}</Span>;

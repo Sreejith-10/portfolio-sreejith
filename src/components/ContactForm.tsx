@@ -44,6 +44,10 @@ const Submit = styled.button`
 		rgb(230, 0, 255) 100%
 	);
 	box-shadow: rgb(31, 38, 52) 20px 20px 60px, rgb(31, 38, 52) -20px -20px 60px;
+	transition: ease-in 0.4s;
+	&:active {
+		scale: 0.8;
+	}
 `;
 
 const ContactForm = () => {
@@ -59,10 +63,10 @@ const ContactForm = () => {
 			whileInView={{rotate: 360, scale: 1}}
 			transition={{type: "spring", stiffness: 260, damping: 20}}>
 			<FormTitle>Email me</FormTitle>
-			<FormInput placeholder="Your email" required type="email" />
-			<FormInput placeholder="Your name" required type="text" />
+			<FormInput placeholder="Your email" type="email" />
+			<FormInput placeholder="Your name" type="text" />
 			<FormText placeholder="Subject" />
-			<Submit type="submit">Send</Submit>
+			<Submit type="button">Send</Submit>
 		</motion.form>
 	);
 };

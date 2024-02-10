@@ -4,15 +4,19 @@ import {darkTheme} from "../utils/Theme";
 import {links, userInfo} from "../constants/UserData";
 import {motion} from "framer-motion";
 import "../App.css";
+import HeroBg from "./HeroBg";
 
 const HeroContainer = styled.div`
 	width: 100%;
-	height: auto;
-	background: ${darkTheme.card_light};
+	height: 100vh;
+	/* background: ${darkTheme.card_light}; */
 	display: flex;
 	align-items: center;
 	justify-content: center;
 	clip-path: polygon(0 0, 100% 0, 100% 100%, 70% 95%, 0 100%);
+	@media (max-width: 600px) {
+		height: 100dvh;
+	}
 `;
 const HeroWrapper = styled.div`
 	width: 65%;
@@ -89,59 +93,78 @@ const ResumeButton = styled.a`
 	}
 `;
 
+const HeroInfoStart = styled.h4`
+	color: white;
+	font-weight: 600;
+	display: flex;
+	text-align: center;
+	font-size: 1.5rem;
+	gap: 10px;
+	margin-top: 2px;
+	@media (max-width: 600px) {
+		width: "100%";
+		line-break: "normal";
+		font-size: 25px;
+	}
+`;
+const HeroJob = styled.h4`
+	color: ${darkTheme.primary};
+	font-weight: 700;
+	@media (max-width: 600px) {
+		font-size: 25px;
+	}
+`;
+const HeroSelf = styled.p`
+	color: grey;
+	margin-top: 50px;
+	font-size: 2rem;
+	margin-bottom: 40px;
+	@media (max-width: 900px) {
+		margin-bottom: 50px;
+		font-size: 2rem;
+		text-align: start;
+	}
+	@media (max-width: 600px) {
+		margin-bottom: 10px;
+		font-size: 20px;
+		text-align: center;
+	}
+`;
+
 const Hero = () => {
 	return (
-		<HeroContainer id="about">
-			<HeroWrapper>
-				<HeroLeft>
-					<motion.div
-						className="left-hero"
-						variants={{
-							hidden: {opacity: 0, x: -75},
-							visible: {opacity: 1, x: 0},
-						}}
-						initial="hidden"
-						animate="visible"
-						transition={{duration: 1, delay: 1}}>
-						<Title>Hi,I am {userInfo.name}</Title>
-						<Typography
-							variant="h4"
-							sx={{color: "white", fontSize: {xs: 25}}}
-							fontWeight={600}
-							display={"flex"}
-							gap={2}
-							marginTop={2}
-							textAlign={"center"}>
-							I am a{" "}
-							<Typography
-								variant="h4"
-								color={darkTheme.primary}
-								fontWeight={700}
-								sx={{fontSize: {xs: 25}}}>
-								{userInfo.role}
-							</Typography>
-						</Typography>
-						<Typography
-							variant="h4"
-							color={"grey"}
-							mt={5}
-							sx={{
-								marginBottom: {lg: "50px", xs: "10px"},
-								fontSize: {xs: "20px", lg: "1.8rem"},
-								textAlign: {xs: "center", lg: "start"},
-							}}>
-							{userInfo.description}
-						</Typography>
-						<ResumeButton target="display" href={links.resume}>
-							Resume
-						</ResumeButton>
-					</motion.div>
-				</HeroLeft>
-				<HeroRight>
-					<HeroImage src="/images/mainIconsdark.svg" />
-				</HeroRight>
-			</HeroWrapper>
-		</HeroContainer>
+		<>
+			<div style={{width: "100%", height: "100vh", position: "relative"}}>
+				<HeroBg />
+				<HeroContainer id="About">
+					<HeroWrapper>
+						<HeroLeft>
+							<motion.div
+								className="left-hero"
+								variants={{
+									hidden: {opacity: 0, x: -75},
+									visible: {opacity: 1, x: 0},
+								}}
+								initial="hidden"
+								animate="visible"
+								transition={{duration: 1, delay: 1}}>
+								<Title>Hi,I am {userInfo.name}</Title>
+								<HeroInfoStart>
+									I am a <HeroJob>{userInfo.role}</HeroJob>
+								</HeroInfoStart>
+								<HeroSelf>{userInfo.description}</HeroSelf>
+								<ResumeButton target="display" href={links.resume}>
+									Resume
+								</ResumeButton>
+							</motion.div>
+						</HeroLeft>
+						<HeroRight>
+							<HeroImage alt="not found" src="/images/mainIconsdark.svg" />
+						</HeroRight>
+					</HeroWrapper>
+				</HeroContainer>
+			</div>
+		</>
 	);
 };
 

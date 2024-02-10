@@ -75,10 +75,11 @@ export const projectCard: CardData = [
 		projectImg: "/images/projectImg/blogify (1).png",
 		projectTitle: "Blogify Hub",
 		tech: [
-			"ReactJS",
+			"React JS",
 			"TypeScript",
-			"TailwindCSS",
-			"NodeJS",
+			"Tailwind CSS",
+			"Scoket io",
+			"Node JS",
 			"Express",
 			"MongoDB",
 			"Mongoose",
@@ -137,7 +138,7 @@ export const projectCard: CardData = [
 		projectId: "git_2",
 		projectImg: "/images/projectImg/chat1.png",
 		projectTitle: "Chat Zone",
-		tech: ["ReactJS", "JavaScript", "Tailwind", "Firebase"],
+		tech: ["React JS", "JavaScript", "Tailwind CSS", "Firebase"],
 		description:
 			"Chat zone is an web application made with react and firebase which users can add friends and message them.",
 		features: ["Real time chat", "Search friends", "Upload images"],
@@ -149,7 +150,7 @@ export const projectCard: CardData = [
 		projectId: "git_3",
 		projectImg: "/images/projectImg/food.png",
 		projectTitle: "Food-Recipe App",
-		tech: ["ReactJS", "HTML", "CSS"],
+		tech: ["React JS", "HTML", "CSS"],
 		description:
 			"This is project helps users to find there favorite recipes with the help of MealDB api.Users can filter dishes,serach dishes,etc.",
 		features: [
@@ -169,7 +170,7 @@ export const projectCard: CardData = [
 		projectId: "git_4",
 		projectImg: "/images/projectImg/todo.png",
 		projectTitle: "Todo App",
-		tech: ["ReactJS", "HTML", "CSS"],
+		tech: ["React JS", "HTML", "CSS"],
 		description:
 			"This is a simple todo app made with react js with crud operations",
 		features: ["Basic Crud operations like add task,edit,delete"],
@@ -181,7 +182,7 @@ export const projectCard: CardData = [
 		projectId: "git_5",
 		projectImg: "/images/projectImg/tic.png",
 		projectTitle: "Tic-Tac-Toe",
-		tech: ["ReactJS", "HTML", "CSS"],
+		tech: ["React JS", "HTML", "CSS"],
 		description:
 			"A fun tic-tac-toe game made for having a fun time with friends.The players can see live scores and winners",
 		features: ["Score board"],
@@ -191,7 +192,21 @@ export const projectCard: CardData = [
 	},
 ];
 
-export const workingProjects : WorkingProjectsType = [];
+export const workingProjects: WorkingProjectsType = [
+	{
+		projectId: "dev_1",
+		projectTitle: "Weather-App",
+		description: "A weather app build with Next js",
+		features: [
+			"Daily forcast",
+			"Sevenday forecast",
+			"Search places",
+			"Other weather related info such as humidity,air quality, etc",
+		],
+		projectImg: "/images/projectImg/next-wather-app.png",
+		tech: ["Next Js", "Daisy UI", "Oneweathermap"],
+	},
+];
 
 export const links = {
 	resume:

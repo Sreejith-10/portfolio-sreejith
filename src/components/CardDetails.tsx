@@ -1,10 +1,9 @@
 import styled from "styled-components";
-import { Close, GitHub } from "@mui/icons-material";
-import { Typography } from "@mui/material";
-import { CardData, SetState } from "../types/lib";
-import { motion } from "framer-motion";
+import {Close, GitHub} from "@mui/icons-material";
+import {CardData, SetState} from "../types/lib";
+import {motion} from "framer-motion";
 import "../App.css";
-import { useEffect, useState } from "react";
+import {useEffect, useState} from "react";
 
 type CardDetailsType = {
 	setShowDetails: SetState<boolean>;
@@ -20,7 +19,7 @@ const BOX = styled.div`
 	display: flex;
 	align-items: center;
 	justify-content: center;
-	@media (max-width:600px) {
+	@media (max-width: 600px) {
 		width: 100vw;
 		height: 100vh;
 	}
@@ -36,13 +35,13 @@ const CardTech = styled.div`
 const Span = styled.span`
 	font-size: 18px;
 	font-weight: 400;
-	color: ${({ theme }) => theme.text_primary};
-	border: ${({ theme }) => theme.primary} 1px solid;
+	color: ${({theme}) => theme.text_primary};
+	border: ${({theme}) => theme.primary} 1px solid;
 	padding: 2px 8px;
 	border-radius: 20px;
 `;
 const CardSubTitle = styled.div`
-	color: ${({ theme }) => theme.text_secondary};
+	color: ${({theme}) => theme.text_secondary};
 	font-size: 20px;
 	font-weight: 400;
 `;
@@ -57,7 +56,7 @@ const IconBox = styled.div`
 	position: absolute;
 	top: 30px;
 	right: 30px;
-	border: solid 2px ${({ theme }) => theme.primary};
+	border: solid 2px ${({theme}) => theme.primary};
 	border-radius: 12px;
 	display: flex;
 	align-items: center;
@@ -65,7 +64,7 @@ const IconBox = styled.div`
 	cursor: pointer;
 	transition: all ease 0.5s;
 	&:hover {
-		background: ${({ theme }) => theme.bgLight};
+		background: ${({theme}) => theme.bgLight};
 	}
 `;
 const ButtonSection = styled.div`
@@ -89,8 +88,11 @@ const ViewCode = styled.a`
 	gap: 30px;
 	text-decoration: none;
 	color: white;
-	background: ${({ theme }) => theme.bg};
-	border: solid .5px #8400ff;
+	background: ${({theme}) => theme.bg};
+	border: solid 0.5px #8400ff;
+	@media (max-width: 380px) {
+		gap: 10px;
+	}
 `;
 const LiveApp = styled.a`
 	width: 300px;
@@ -99,7 +101,7 @@ const LiveApp = styled.a`
 	color: white;
 	border-radius: 8px;
 	text-align: center;
-	background: ${({ theme }) => theme.primary};
+	background: ${({theme}) => theme.primary};
 	text-decoration: none;
 `;
 const UL = styled.ul`
@@ -133,7 +135,7 @@ const CardImages = styled.img`
 	object-fit: cover;
 	object-position: 50% 50%;
 `;
-const CardDetails = ({ setShowDetails, cardData, layoutId }: CardDetailsType) => {
+const CardDetails = ({setShowDetails, cardData, layoutId}: CardDetailsType) => {
 	const [scrolling, setScrolling] = useState(false);
 	useEffect(() => {
 		scrolling
@@ -153,37 +155,47 @@ const CardDetails = ({ setShowDetails, cardData, layoutId }: CardDetailsType) =>
 						}}
 					/>
 				</IconBox>
-				<CardImages src={cardData.projectImg} />
+				<CardImages alt="not found" src={cardData.projectImg} />
 				<CardTech>
 					{cardData.tech.map((item, id) => {
 						return <Span key={id}>{item}</Span>;
 					})}
 				</CardTech>
-				<Typography variant="h5">{cardData.projectTitle}</Typography>
+				<h1>{cardData.projectTitle}</h1>
 				<Info>
 					<CardSubTitle>{cardData.description}</CardSubTitle>
-					<Typography marginTop={3}>Features</Typography>
+					<h1
+						style={{fontSize: "1rem", marginTop: "20px", marginBottom: "5px"}}>
+						Features
+					</h1>
 					<UL>
 						{cardData.features.map((item, id) => {
 							return <List key={id}>{item}</List>;
 						})}
 					</UL>
-					<Typography fontSize={20} marginTop={3}>
+					<h1
+						style={{
+							fontSize: "1.5rem",
+							marginTop: "20px",
+							marginBottom: "5px",
+						}}>
 						Images
-					</Typography>
+					</h1>
 					<ImgWrapper
 						onMouseEnter={() => setScrolling(true)}
 						onMouseLeave={() => setScrolling(false)}>
 						{cardData.images.map((item, id) => {
-							return <MiniImg src={item} key={id} />;
+							return <MiniImg alt="not found" src={item} key={id} />;
 						})}
 					</ImgWrapper>
 				</Info>
 				<ButtonSection>
 					<ViewCode target="display" href={cardData.github}>
-						View Code <GitHub sx={{ fill: "#854CE6" }} />
+						View Code <GitHub sx={{fill: "#854CE6"}} />
 					</ViewCode>
-					<LiveApp href={cardData.live} target="display">View Live App</LiveApp>
+					<LiveApp href={cardData.live} target="display">
+						View Live App
+					</LiveApp>
 				</ButtonSection>
 			</motion.div>
 		</BOX>

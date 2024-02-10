@@ -7,11 +7,14 @@ import {CardData, SetState} from "../types/lib";
 
 const ProjectContainer = styled.div`
 	width: 100%;
-	height: 100%;
+	height: auto;
 	margin-top: 30px;
 	display: flex;
 	align-items: center;
 	justify-content: center;
+	@media (max-width: 400px) {
+		margin-top: 100px;
+	}
 `;
 const ProjectWrapper = styled.div`
 	width: 65%;
@@ -58,7 +61,7 @@ const Project = ({setShowDetails, setCardData, setLayoutId}: ProjectProps) => {
 		}),
 	};
 	return (
-		<div id="projects">
+		<div id="Projects">
 			<ProjectContainer>
 				<ProjectWrapper>
 					<PageTitle>Projects</PageTitle>

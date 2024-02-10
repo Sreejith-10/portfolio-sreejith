@@ -8,9 +8,14 @@ import "../App.css";
 
 const SkillContianer = styled.div`
 	width: 100%;
+	height: 100vh;
 	display: flex;
 	align-items: center;
 	justify-content: center;
+	
+	@media (max-width: 400px) {
+		height: 130vh;
+	}
 `;
 const SkillWrapper = styled.div`
 	width: 65%;
@@ -66,8 +71,9 @@ const CardTitle = styled.div`
 	justify-content: center;
 	font-size: 2.4rem;
 	font-weight: 500;
+	margin-bottom: 50px;
 	color: ${({theme}) => theme.text_primary};
-	@media (max-width:600px) {
+	@media (max-width: 600px) {
 		margin-bottom: 10px;
 	}
 `;
@@ -81,7 +87,6 @@ const CardContainer = styled.div`
 	border-radius: 16px;
 	padding: 18px 36px;
 `;
-
 
 const container = {
 	hidden: {opacity: 0, scale: 0},
@@ -120,7 +125,7 @@ const Skills = () => {
 		offset: ["0 1", "1 1"],
 	});
 	return (
-		<SkillContianer id="skills">
+		<SkillContianer id="Skills">
 			<SkillWrapper>
 				<PageTitle>Skills</PageTitle>
 				<PageSub>
@@ -138,7 +143,7 @@ const Skills = () => {
 								}}
 								className="SkillBox"
 								variants={container}
-								viewport={{once:true}}
+								viewport={{once: true}}
 								initial="hidden"
 								whileInView={"visible"}>
 								{items.skillArray.map((arrItem, index) => (
@@ -154,7 +159,7 @@ const Skills = () => {
 											listStyle: "none",
 										}}>
 										<SkillItem>
-											<SkillIcon src={arrItem.link} />
+											<SkillIcon alt="not found" src={arrItem.link} />
 											{arrItem.skill}
 										</SkillItem>
 									</motion.li>
