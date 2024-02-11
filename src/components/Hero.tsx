@@ -1,4 +1,4 @@
-import {Typography} from "@mui/material";
+
 import styled from "styled-components";
 import {darkTheme} from "../utils/Theme";
 import {links, userInfo} from "../constants/UserData";
