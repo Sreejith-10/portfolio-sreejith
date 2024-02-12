@@ -19,7 +19,8 @@ const FormInput = styled.input`
 `;
 const FormText = styled.textarea`
 	width: 100%;
-	height: 80px;
+	height: 200px;
+	resize: none;
 	font-size: 18px;
 	color: ${({theme}) => theme.white};
 	border-radius: 12px;

@@ -22,7 +22,7 @@ Personal portfolio made with react js
 
 ## Live project
 
-Live : https://bit.ly/sreejithportfolio
+Live : https://bit.ly/portfolio-sreejith
 ## Run Locally
 
 Clone the project
@@ -46,7 +46,7 @@ Install dependencies
 Start the server
 
 ```bash
-  npm run start
+  npm run dev
 ```
 
 

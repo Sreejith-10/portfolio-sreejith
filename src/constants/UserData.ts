@@ -136,8 +136,8 @@ export const projectCard: CardData = [
 	},
 	{
 		projectId: "git_2",
-		projectImg: "/images/projectImg/chat1.png",
 		projectTitle: "Chat Zone",
+		projectImg: "/images/projectImg/chat1.png",
 		tech: ["React JS", "JavaScript", "Tailwind CSS", "Firebase"],
 		description:
 			"Chat zone is an web application made with react and firebase which users can add friends and message them.",
@@ -145,6 +145,22 @@ export const projectCard: CardData = [
 		images: ["/images/projectImg/chat1.png"],
 		github: "https://github.com/Sreejith-10/Chat-app",
 		live: "https://chat-app-167f4.firebaseapp.com/",
+	},
+	{
+		projectId: "dev_1",
+		projectTitle: "Weather-App",
+		description: "A weather app build with Next js",
+		features: [
+			"Daily forcast",
+			"Sevenday forecast",
+			"Search places",
+			"Other weather related info such as humidity,air quality, etc",
+		],
+		projectImg: "/images/projectImg/next-wather-app.png",
+		tech: ["Next Js", "Daisy UI", "Oneweathermap"],
+		live: "https://my-next-weather-app.vercel.app/",
+		github: "https://github.com/Sreejith-10/weather-app-next",
+		images:["../../public/images/projectImg/weather-app.png"]
 	},
 	{
 		projectId: "git_3",
@@ -193,21 +209,7 @@ export const projectCard: CardData = [
 ];
 
 export const workingProjects: WorkingProjectsType = [
-	{
-		projectId: "dev_1",
-		projectTitle: "Weather-App",
-		description: "A weather app build with Next js",
-		features: [
-			"Daily forcast",
-			"Sevenday forecast",
-			"Search places",
-			"Other weather related info such as humidity,air quality, etc",
-		],
-		projectImg: "/images/projectImg/next-wather-app.png",
-		tech: ["Next Js", "Daisy UI", "Oneweathermap"],
-		live: "https://my-next-weather-app.vercel.app/",
-		github: "https://github.com/Sreejith-10/weather-app-next",
-	},
+	
 ];
 
 export const links = {

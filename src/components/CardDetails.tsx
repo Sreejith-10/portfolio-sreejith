@@ -157,7 +157,7 @@ const CardDetails = ({setShowDetails, cardData, layoutId}: CardDetailsType) => {
 				</IconBox>
 				<CardImages alt="not found" src={cardData.projectImg} />
 				<CardTech>
-					{cardData.tech.map((item, id) => {
+					{cardData?.tech?.map((item, id) => {
 						return <Span key={id}>{item}</Span>;
 					})}
 				</CardTech>
@@ -169,7 +169,7 @@ const CardDetails = ({setShowDetails, cardData, layoutId}: CardDetailsType) => {
 						Features
 					</h1>
 					<UL>
-						{cardData.features.map((item, id) => {
+						{cardData?.features?.map((item, id) => {
 							return <List key={id}>{item}</List>;
 						})}
 					</UL>
@@ -184,7 +184,7 @@ const CardDetails = ({setShowDetails, cardData, layoutId}: CardDetailsType) => {
 					<ImgWrapper
 						onMouseEnter={() => setScrolling(true)}
 						onMouseLeave={() => setScrolling(false)}>
-						{cardData.images.map((item, id) => {
+						{cardData?.images?.map((item, id) => {
 							return <MiniImg alt="not found" src={item} key={id} />;
 						})}
 					</ImgWrapper>

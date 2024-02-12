@@ -1,4 +1,3 @@
-import {Typography} from "@mui/material";
 import styled from "styled-components";
 import {darkTheme} from "../utils/Theme";
 import {links, userInfo} from "../constants/UserData";
@@ -102,8 +101,7 @@ const HeroInfoStart = styled.h4`
 	gap: 10px;
 	margin-top: 2px;
 	@media (max-width: 600px) {
-		width: "100%";
-		line-break: "normal";
+		white-space: nowrap;
 		font-size: 25px;
 	}
 `;
