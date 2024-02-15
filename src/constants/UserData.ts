@@ -83,6 +83,7 @@ export const projectCard: CardData = [
 			"Express",
 			"MongoDB",
 			"Mongoose",
+			"JSON WebToken"
 		],
 		description:
 			"A blgoing webisite to share moments in life.A place to get latest info about thechnology,travel,etc",
