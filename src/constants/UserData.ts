@@ -28,7 +28,7 @@ export const userInfo = {
 	description:
 		"A self taught,passoionate and motivated individual eager to embark on a journey as a Web Develper. With a strong foundation in both front end and backend,i'm waiting for opportunity to show my skills.I am exicted to learn and grow in the filed of web develpoment.",
 	reusme:
-		"https://drive.google.com/file/d/1HmZDqKFFoX_WcVeaWkx7DwPbgiFVIVcv/view?usp=sharing"
+		"https://drive.google.com/file/d/1HmZDqKFFoX_WcVeaWkx7DwPbgiFVIVcv/view?usp=sharing",
 };
 
 export const skills = [
