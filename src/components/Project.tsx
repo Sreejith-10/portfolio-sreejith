@@ -1,7 +1,11 @@
 import styled from "styled-components";
 import {PageSub, PageTitle} from "../utils/CommonCompnents";
 import Card from "./Card";
-import {projectCard, workingProjects} from "../constants/UserData";
+import {
+	freelanceProjects,
+	projectCard,
+	workingProjects,
+} from "../constants/UserData";
 import {motion} from "framer-motion";
 import {CardData, SetState} from "../types/lib";
 
@@ -28,18 +32,20 @@ const ProjectWrapper = styled.div`
 	}
 `;
 const ProjectCardContainer = styled.div`
-	display: flex;
+	display: grid;
+	grid-template-columns: repeat(4, 1fr);
+	gap: 20px;
+	/* display: flex;
 	-webkit-box-pack: center;
 	justify-content: center;
 	-webkit-box-align: center;
 	align-items: center;
 	gap: 28px;
-	flex-wrap: wrap;
-	margin: 100px 0px;
+	flex-wrap: wrap; */
+	margin: 50px 0px;
 	@media (max-width: 600px) {
-		flex-direction: column;
+		grid-template-columns: repeat(1, 2fr);
 		margin-top: 50px;
-		gap: 30px;
 	}
 `;
 
@@ -88,13 +94,13 @@ const Project = ({setShowDetails, setCardData, setLayoutId}: ProjectProps) => {
 					</ProjectCardContainer>
 					<PageTitle>On going projects</PageTitle>
 					<PageSub>I am corrently working on these projects</PageSub>
-					<ProjectCardContainer>
-						{workingProjects.length === 0 ? (
-							<PageSub style={{fontSize: "30px"}}>
-								Not working on any projects!
-							</PageSub>
-						) : (
-							workingProjects?.map((item, id) => (
+					{workingProjects.length === 0 ? (
+						<PageSub style={{fontSize: "30px"}}>
+							Not working on any projects!
+						</PageSub>
+					) : (
+						<ProjectCardContainer>
+							{workingProjects?.map((item, id) => (
 								<motion.li
 									layoutId={item?.projectId}
 									style={{listStyle: "none", cursor: "pointer"}}
@@ -111,9 +117,36 @@ const Project = ({setShowDetails, setCardData, setLayoutId}: ProjectProps) => {
 										setLayoutId={setLayoutId}
 									/>
 								</motion.li>
-							))
-						)}
+							))}
+						</ProjectCardContainer>
+					)}
+					<br />
+					<br />
+					<br />
+
+					<PageTitle>Freelance projects</PageTitle>
+					<PageSub>These are the works ive done for my clients</PageSub>
+					<ProjectCardContainer>
+						{freelanceProjects?.map((item, id) => (
+							<motion.li
+								layoutId={item?.projectId}
+								style={{listStyle: "none", cursor: "pointer"}}
+								variants={Fadein}
+								initial="hidden"
+								whileInView="visible"
+								viewport={{once: true}}
+								custom={id}
+								key={id}>
+								<Card
+									item={item}
+									setShowDetails={setShowDetails}
+									setCardData={setCardData}
+									setLayoutId={setLayoutId}
+								/>
+							</motion.li>
+						))}
 					</ProjectCardContainer>
+
 					<br />
 					<br />
 					<br />

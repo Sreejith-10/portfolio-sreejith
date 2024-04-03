@@ -132,7 +132,7 @@ const HeroSelf = styled.p`
 const Hero = () => {
 	return (
 		<>
-			<div style={{width: "100%", height: "100vh", position: "relative"}}>
+			<div style={{width: "100%", height: "100dvh", position: "relative"}}>
 				<HeroBg />
 				<HeroContainer id="About">
 					<HeroWrapper>

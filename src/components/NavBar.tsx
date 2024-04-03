@@ -1,22 +1,28 @@
 import styled from "styled-components";
 import {darkTheme} from "../utils/Theme";
 import {Close, Menu} from "@mui/icons-material";
-import {useState} from "react";
+import {useEffect, useState} from "react";
 import {motion} from "framer-motion";
 import "../App.css";
 import {links} from "../constants/UserData";
 
 const Nav = styled.div`
-	background-color: ${({theme}) => theme.bg};
+	background-color: transparent;
+
 	width: 100%;
 	height: 8vh;
-	position: sticky;
+	position: fixed;
 	z-index: 99;
 	top: 0;
 	left: 0;
 	display: flex;
 	align-items: center;
 	justify-content: center;
+	transition: ease 0.4s;
+
+	&.top {
+		background-color: ${({theme}) => theme.bg};
+	}
 `;
 const NavWrapper = styled.div`
 	width: 60%;
@@ -41,7 +47,10 @@ const MobileNav = styled.div`
 		display: block;
 	}
 `;
-const Title = styled.h1`
+const Title = styled.a`
+	font-size: 2rem;
+	font-weight: bold;
+	text-decoration: none;
 	color: ${darkTheme.primary};
 	@media (max-width: 600px) {
 		margin-left: -45px;
@@ -153,7 +162,7 @@ const child = {
 
 const NavBar = () => {
 	const [open, setOpen] = useState<boolean>(false);
-	const [active, setActive] = useState<string>(window.location.hash);
+	const [active, setActive] = useState<string>("About");
 	const pageLinks = ["About", "Skills", "Projects", "Education", "Contact"];
 
 	const linkHandler = (id: string) => {
@@ -161,14 +170,25 @@ const NavBar = () => {
 		setOpen(false);
 		location.hash = id;
 	};
-	console.log(active);
+
+	const [top, setTop] = useState(false);
+
+	useEffect(() => {
+		const handleScroll = () => {
+			setTop(window.scrollY > 50);
+		};
+
+		document.addEventListener("scroll", handleScroll);
+
+		return () => window.removeEventListener("scroll", handleScroll);
+	}, [top]);
 
 	return (
 		<>
-			<Nav>
+			<Nav id="nav-bar" className={`${top ? "top" : ""}`}>
 				<NavWrapper>
 					<NavIconContainer>
-						<Title>Portfolio</Title>
+						<Title href="#About">Portfolio</Title>
 					</NavIconContainer>
 					<MobileNav>
 						{!open ? (

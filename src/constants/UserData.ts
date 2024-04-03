@@ -22,6 +22,17 @@ type WorkingProjectsType = {
 	live?: string;
 }[];
 
+type FreelanceProjectsType = {
+	projectId?: string;
+	projectImg?: string;
+	projectTitle?: string;
+	tech?: string[];
+	description?: string;
+	features?: string[];
+	images?: string[];
+	live?: string;
+}[];
+
 export const userInfo = {
 	name: "Sreejith",
 	role: "MERN Stack Developer",
@@ -211,6 +222,20 @@ export const projectCard: CardData = [
 export const workingProjects: WorkingProjectsType = [
 	
 ];
+
+export const freelanceProjects:FreelanceProjectsType = [
+{
+		projectId: "git_5",
+		projectImg: "/images/projectImg/tic.png",
+		projectTitle: "Tic-Tac-Toe",
+		tech: ["React JS", "HTML", "CSS"],
+		description:
+			"A fun tic-tac-toe game made for having a fun time with friends.The players can see live scores and winners",
+		features: ["Score board"],
+		images: ["/images/projectImg/tic.png"],
+		live: "https://sreejith-10.github.io/Tic-Tac-Toe/",
+	},
+]
 
 export const links = {
 	resume:

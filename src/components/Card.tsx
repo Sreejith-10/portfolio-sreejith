@@ -24,7 +24,7 @@ const ProjectCard = styled.div`
 	background-color: ${({theme}) => theme.bg};
 	cursor: pointer;
 	border: solid 1px ${({theme}) => theme.primary};
-	border-radius: 10px;
+	border-radius: 20px;
 	box-shadow: ${({theme}) => theme.bgLight} 0px 0px 12px 4px;
 	overflow: hidden;
 	padding: 26px 20px;

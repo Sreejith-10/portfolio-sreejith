@@ -13,7 +13,7 @@ export const PageTitle = styled.h1`
 
 export const PageSub = styled.p`
 	font-size: 18px;
-	margin-top: 20px;
+	margin: 40px 0px;
 	text-align: center;
 	max-width: 600px;
 	color: ${({theme})=>theme.text_primary};

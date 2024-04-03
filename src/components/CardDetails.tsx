@@ -190,9 +190,13 @@ const CardDetails = ({setShowDetails, cardData, layoutId}: CardDetailsType) => {
 					</ImgWrapper>
 				</Info>
 				<ButtonSection>
-					<ViewCode target="display" href={cardData.github}>
-						View Code <GitHub sx={{fill: "#854CE6"}} />
-					</ViewCode>
+					{cardData.github ? (
+						<ViewCode target="display" href={cardData.github}>
+							View Code <GitHub sx={{fill: "#854CE6"}} />
+						</ViewCode>
+					) : (
+						""
+					)}
 					<LiveApp href={cardData.live} target="display">
 						View Live App
 					</LiveApp>

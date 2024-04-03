@@ -52,22 +52,46 @@ const Submit = styled.button`
 `;
 
 const ContactForm = () => {
-	const onSubmitHandler = (e: FormEvent) => {
-		console.log(e);
+	const onSubmit = async (event: FormEvent<HTMLFormElement>) => {
+		event.preventDefault();
+		console.log("Click");
+		console.log(event.currentTarget);
+		const formData = new FormData(event.currentTarget);
+
+		formData.append("access_key", "61a216ff-4b40-48f9-8d75-b487dee97f85");
+
+		const response = await fetch("https://api.web3forms.com/submit", {
+			method: "POST",
+			body: formData,
+		});
+
+		const data = await response.json();
+
+		if (data.success) {
+			event.currentTarget.reset();
+			console.log(data);
+		} else {
+			console.log("Error", data);
+		}
 	};
 	return (
 		<motion.form
-			onSubmit={onSubmitHandler}
+			onSubmit={onSubmit}
 			className="FormWrapper"
 			initial={{scale: 0}}
 			viewport={{once: true}}
 			whileInView={{rotate: 360, scale: 1}}
 			transition={{type: "spring", stiffness: 260, damping: 20}}>
-			<FormTitle>Email me</FormTitle>
-			<FormInput placeholder="Your email" type="email" />
-			<FormInput placeholder="Your name" type="text" />
-			<FormText placeholder="Subject" />
-			<Submit type="button">Send</Submit>
+			<FormTitle>Reach me</FormTitle>
+			<input
+				type="hidden"
+				name="access_key"
+				value="61a216ff-4b40-48f9-8d75-b487dee97f85"
+			/>
+			<FormInput placeholder="Your email" type="email" name="email" />
+			<FormInput placeholder="Your name" type="text" name="name" />
+			<FormText placeholder="Subject" name="message" />
+			<Submit type="submit">Send</Submit>
 		</motion.form>
 	);
 };
