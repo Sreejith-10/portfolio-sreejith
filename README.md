@@ -1,7 +1,7 @@
 
 # Portfolio
 
-Personal portfolio made with react js
+Personal portfolio made with React js
 
 ## Tech Stack
 
