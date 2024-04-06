@@ -92,6 +92,37 @@ const Project = ({setShowDetails, setCardData, setLayoutId}: ProjectProps) => {
 							</motion.li>
 						))}
 					</ProjectCardContainer>
+
+					<br />
+					<br />
+					<br />
+
+					<PageTitle>Freelance projects</PageTitle>
+					<PageSub>These are the works ive done for my clients</PageSub>
+					<ProjectCardContainer>
+						{freelanceProjects?.map((item, id) => (
+							<motion.li
+								layoutId={item?.projectId}
+								style={{listStyle: "none", cursor: "pointer"}}
+								variants={Fadein}
+								initial="hidden"
+								whileInView="visible"
+								viewport={{once: true}}
+								custom={id}
+								key={id}>
+								<Card
+									item={item}
+									setShowDetails={setShowDetails}
+									setCardData={setCardData}
+									setLayoutId={setLayoutId}
+								/>
+							</motion.li>
+						))}
+					</ProjectCardContainer>
+
+					<br />
+					<br />
+					<br />
 					<PageTitle>On going projects</PageTitle>
 					<PageSub>I am corrently working on these projects</PageSub>
 					{workingProjects.length === 0 ? (
@@ -121,32 +152,6 @@ const Project = ({setShowDetails, setCardData, setLayoutId}: ProjectProps) => {
 						</ProjectCardContainer>
 					)}
 					<br />
-					<br />
-					<br />
-
-					<PageTitle>Freelance projects</PageTitle>
-					<PageSub>These are the works ive done for my clients</PageSub>
-					<ProjectCardContainer>
-						{freelanceProjects?.map((item, id) => (
-							<motion.li
-								layoutId={item?.projectId}
-								style={{listStyle: "none", cursor: "pointer"}}
-								variants={Fadein}
-								initial="hidden"
-								whileInView="visible"
-								viewport={{once: true}}
-								custom={id}
-								key={id}>
-								<Card
-									item={item}
-									setShowDetails={setShowDetails}
-									setCardData={setCardData}
-									setLayoutId={setLayoutId}
-								/>
-							</motion.li>
-						))}
-					</ProjectCardContainer>
-
 					<br />
 					<br />
 					<br />

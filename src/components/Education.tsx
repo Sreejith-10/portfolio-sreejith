@@ -5,7 +5,7 @@ import "../App.css";
 
 const EducationContainer = styled.div`
 	width: 100%;
-	margin-top: 100px;
+	margin-top: 50px;
 	height: 100vh;
 	display: flex;
 	align-items: center;

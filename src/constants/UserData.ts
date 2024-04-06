@@ -49,6 +49,7 @@ export const skills = [
 			{skill: "JavaScript", link: "/images/js.png"},
 			{skill: "TypeScript", link: "/images/ts.png"},
 			{skill: "React Js", link: "/images/react.png"},
+			{skill: "Next Js", link: "/images/next.svg"},
 			{skill: "Redux", link: "/images/redux.png"},
 			{skill: "HTML", link: "/images/html.png"},
 			{skill: "CSS", link: "/images/css.png"},
@@ -76,6 +77,7 @@ export const skills = [
 		skillArray: [
 			{skill: "Github", link: "/images/github-logo.png"},
 			{skill: "Vscode", link: "/images/1705574507137.png"},
+			{skill: "Postman", link: "/images/postman-icon.svg"},
 		],
 	},
 ];
@@ -226,15 +228,13 @@ export const workingProjects: WorkingProjectsType = [
 
 export const freelanceProjects:FreelanceProjectsType = [
 {
-		projectId: "git_5",
-		projectImg: "/images/projectImg/tic.png",
-		projectTitle: "Tic-Tac-Toe",
-		tech: ["React JS", "HTML", "CSS"],
-		description:
-			"A fun tic-tac-toe game made for having a fun time with friends.The players can see live scores and winners",
-		features: ["Score board"],
-		images: ["/images/projectImg/tic.png"],
-		live: "https://sreejith-10.github.io/Tic-Tac-Toe/",
+		projectId:"freelance_1",
+		projectImg:"/images/projectImg/botitalia.png",
+		projectTitle:"BotItalia",
+		tech:["HTML","CSS","Bootstrap","Jquery"],
+		description:"Website for company in uae",
+		images:["/images/projectImg/botitalia.png","/images/projectImg/botitalia2.png","/images/projectImg/botitalia3.png"],
+		live:"https://botitaliabot.com"
 	},
 ]
 

@@ -90,7 +90,7 @@ const ViewCode = styled.a`
 	color: white;
 	background: ${({theme}) => theme.bg};
 	border: solid 0.5px #8400ff;
-	@media (max-width: 380px) {
+	@media (max-width: 400px) {
 		gap: 10px;
 	}
 `;
@@ -192,7 +192,8 @@ const CardDetails = ({setShowDetails, cardData, layoutId}: CardDetailsType) => {
 				<ButtonSection>
 					{cardData.github ? (
 						<ViewCode target="display" href={cardData.github}>
-							View Code <GitHub sx={{fill: "#854CE6"}} />
+							<p style={{width: "100%"}}>View Code</p>{" "}
+							<GitHub sx={{fill: "#854CE6"}} />
 						</ViewCode>
 					) : (
 						""

@@ -1,6 +1,7 @@
 import styled from "styled-components";
 import {PageSub, PageTitle} from "../utils/CommonCompnents";
 import ContactForm from "./ContactForm";
+import {SetState} from "../types/lib";
 
 const SectionContainer = styled.div`
 	width: 100%;
@@ -28,14 +29,19 @@ const FormContainer = styled.div`
 	justify-content: center;
 `;
 
-const Contact = () => {
+type ContactProps = {
+	setMessage: SetState<string>;
+	setPopup: SetState<boolean>;
+};
+
+const Contact = ({setMessage, setPopup}: ContactProps) => {
 	return (
 		<SectionContainer id="Contact">
 			<ContactWrapper>
 				<PageTitle>Contact</PageTitle>
 				<PageSub>Feel free to reach out</PageSub>
 				<FormContainer>
-					<ContactForm />
+					<ContactForm setMessage={setMessage} setPopup={setPopup} />
 				</FormContainer>
 			</ContactWrapper>
 		</SectionContainer>

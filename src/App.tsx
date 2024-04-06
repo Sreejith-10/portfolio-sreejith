@@ -9,12 +9,15 @@ import Contact from "./components/Contact.js";
 import Footer from "./components/Footer.js";
 import {useState} from "react";
 import CardDetails from "./components/CardDetails.js";
+import PopUp from "./components/PopUp.js";
+import {motion} from "framer-motion";
 
 const Body = styled.div`
 	background-color: ${({theme}) => theme.bg};
 	width: 100%;
 	height: auto;
 	overflow-x: hidden;
+	position: relative;
 `;
 
 const Wrapper = styled.div`
@@ -57,11 +60,29 @@ const App = () => {
 	});
 	const [layoutId, setLayoutId] = useState("");
 	const [showDetails, setShowDetails] = useState(false);
+
+	const [popup, setPopup] = useState(false);
+	const [message, setMessage] = useState("");
+
 	return (
 		<>
 			<ThemeProvider theme={darkTheme}>
 				<NavBar />
 				<Body>
+					<motion.div
+						variants={{
+							hidden: {
+								translateX: 400,
+							},
+							show: {
+								translateX: 0,
+							},
+						}}
+						initial={"hidden"}
+						animate={popup ? "show" : "hidden"}
+						style={{position: "fixed", top: 100, right: 30, zIndex: 10}}>
+						<PopUp message={message} setPopup={setPopup} />
+					</motion.div>
 					<Hero />
 					<Wrapper>
 						<Skills />
@@ -73,7 +94,7 @@ const App = () => {
 					</Wrapper>
 					<Wrapper>
 						<Education />
-						<Contact />
+						<Contact setMessage={setMessage} setPopup={setPopup} />
 					</Wrapper>
 					<Footer />
 					{showDetails && (

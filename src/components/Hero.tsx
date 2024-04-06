@@ -13,6 +13,30 @@ const HeroContainer = styled.div`
 	align-items: center;
 	justify-content: center;
 	clip-path: polygon(0 0, 100% 0, 100% 100%, 70% 95%, 0 100%);
+	/* xls: {
+		max: "1536px";
+	}
+	,
+				xl: {
+		max: "1280px";
+	}
+	,
+				lg: {
+		max: "1024px";
+	}
+	,
+				md: {
+		max: "768px";
+	}
+	,
+				sm: {
+		max: "640px";
+	} */
+
+	@media (max-width: 1280px) {
+		height: 100dvh;
+	}
+
 	@media (max-width: 600px) {
 		height: 100dvh;
 	}
@@ -22,6 +46,15 @@ const HeroWrapper = styled.div`
 	padding: 80px 30px;
 	display: flex;
 	gap: 20px;
+
+	@media (max-width: 760px) {
+		width: 80%;
+	}
+
+	@media (max-width: 1024px) {
+		width: 100%;
+	}
+
 	@media (max-width: 600px) {
 		width: 100%;
 		align-items: center;

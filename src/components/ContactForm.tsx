@@ -2,6 +2,7 @@ import styled from "styled-components";
 import {motion} from "framer-motion";
 import "../App.css";
 import {FormEvent} from "react";
+import {SetState} from "../types/lib";
 
 const FormTitle = styled.h1`
 	font-size: 20px;
@@ -51,11 +52,14 @@ const Submit = styled.button`
 	}
 `;
 
-const ContactForm = () => {
+type FormProps = {
+	setMessage: SetState<string>;
+	setPopup: SetState<boolean>;
+};
+
+const ContactForm = ({setMessage, setPopup}: FormProps) => {
 	const onSubmit = async (event: FormEvent<HTMLFormElement>) => {
 		event.preventDefault();
-		console.log("Click");
-		console.log(event.currentTarget);
 		const formData = new FormData(event.currentTarget);
 
 		formData.append("access_key", "61a216ff-4b40-48f9-8d75-b487dee97f85");
@@ -69,9 +73,12 @@ const ContactForm = () => {
 
 		if (data.success) {
 			event.currentTarget.reset();
-			console.log(data);
+			setMessage("Mail sent successfully");
+			setPopup(true);
 		} else {
 			console.log("Error", data);
+			setMessage("Error, try again");
+			setPopup(true);
 		}
 	};
 	return (
@@ -88,9 +95,9 @@ const ContactForm = () => {
 				name="access_key"
 				value="61a216ff-4b40-48f9-8d75-b487dee97f85"
 			/>
-			<FormInput placeholder="Your email" type="email" name="email" />
-			<FormInput placeholder="Your name" type="text" name="name" />
-			<FormText placeholder="Subject" name="message" />
+			<FormInput placeholder="Your email" type="email" name="email" required />
+			<FormInput placeholder="Your name" type="text" name="name" required />
+			<FormText placeholder="Subject" name="message" required />
 			<Submit type="submit">Send</Submit>
 		</motion.form>
 	);

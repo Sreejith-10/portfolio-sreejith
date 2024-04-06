@@ -1,4 +1,3 @@
-import {useScroll} from "framer-motion";
 import {useRef} from "react";
 import {PageSub, PageTitle} from "../utils/CommonCompnents";
 import {skills} from "../constants/UserData";
@@ -12,7 +11,7 @@ const SkillContianer = styled.div`
 	display: flex;
 	align-items: center;
 	justify-content: center;
-	
+
 	@media (max-width: 400px) {
 		height: 130vh;
 	}
@@ -41,7 +40,7 @@ const SkillItem = styled.div`
 	color: rgba(242, 243, 244, 0.5);
 	border: 1px solid rgba(242, 243, 244, 0.5);
 	border-radius: 12px;
-	padding: 12px 16px;
+	padding: 10px 16px;
 	display: flex;
 	-webkit-box-align: center;
 	align-items: center;
@@ -54,8 +53,8 @@ const SkillItem = styled.div`
 	}
 `;
 const SkillIcon = styled.img`
-	width: 40px;
-	height: 40px;
+	width: 35px;
+	height: 35px;
 	@media (max-width: 600px) {
 		width: 25px;
 		height: 25px;
@@ -88,26 +87,6 @@ const CardContainer = styled.div`
 	padding: 18px 36px;
 `;
 
-const container = {
-	hidden: {opacity: 0, scale: 0},
-	visible: {
-		opacity: 1,
-		scale: 1,
-		transition: {
-			delayChildren: 0.5,
-			staggerChildren: 0.5,
-		},
-	},
-};
-
-const item = {
-	hidden: {y: 20, opacity: 0},
-	visible: {
-		y: 0,
-		opacity: 1,
-	},
-};
-
 const CardWrapper = styled.div`
 	width: 100%;
 	display: flex;
@@ -120,10 +99,7 @@ const CardWrapper = styled.div`
 
 const Skills = () => {
 	const ref = useRef(null);
-	const {scrollYProgress}: any = useScroll({
-		target: ref,
-		offset: ["0 1", "1 1"],
-	});
+
 	return (
 		<SkillContianer id="Skills">
 			<SkillWrapper>
@@ -137,20 +113,38 @@ const Skills = () => {
 							<CardTitle>{items.skillName}</CardTitle>
 							<motion.ul
 								ref={ref}
-								style={{
-									scale: scrollYProgress,
-									opacity: scrollYProgress,
+								variants={{
+									hidden: {
+										opacity: 1,
+										scale: 0,
+									},
+									visible: {
+										opacity: 1,
+										scale: 1,
+										transition: {
+											delayChildren: 0.8,
+											staggerChildren: 0.5,
+											type: "spring",
+										},
+									},
 								}}
-								className="SkillBox"
-								variants={container}
-								viewport={{once: true}}
 								initial="hidden"
-								whileInView={"visible"}>
+								whileInView="visible"
+								viewport={{once: true}}
+								className="SkillBox">
 								{items.skillArray.map((arrItem, index) => (
 									<motion.li
+										variants={{
+											hidden: {
+												y: 20,
+												opacity: 0,
+											},
+											visible: {
+												y: 0,
+												opacity: 1,
+											},
+										}}
 										key={index}
-										variants={item}
-										viewport={{once: true}}
 										style={{
 											display: "flex",
 											alignItems: "center",
