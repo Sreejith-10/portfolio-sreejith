@@ -112,3 +112,15 @@ body {
 .active:hover {
 	background: #550d97;
 }
+
+.tool-tip {
+	min-width: 100px;
+	text-align: center;
+	padding: 3px 5px;
+	position: absolute;
+	top: -40px;
+	background: rgb(23, 23, 33);
+	border: 0.1px solid rgb(133, 76, 230);
+	box-shadow: rgba(23, 92, 230, 0.15) 0px 4px 24px;
+	border-radius: 6px;
+}

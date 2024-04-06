@@ -4,6 +4,7 @@ import {skills} from "../constants/UserData";
 import {motion} from "framer-motion";
 import styled from "styled-components";
 import "../App.css";
+import Tile from "./Tile";
 
 const SkillContianer = styled.div`
 	width: 100%;
@@ -31,33 +32,6 @@ const SkillWrapper = styled.div`
 	@media (max-width: 960px) {
 		width: 100%;
 		padding: 20px 20px;
-	}
-`;
-
-const SkillItem = styled.div`
-	font-size: 16px;
-	font-weight: 400;
-	color: rgba(242, 243, 244, 0.5);
-	border: 1px solid rgba(242, 243, 244, 0.5);
-	border-radius: 12px;
-	padding: 10px 16px;
-	display: flex;
-	-webkit-box-align: center;
-	align-items: center;
-	-webkit-box-pack: center;
-	justify-content: center;
-	gap: 8px;
-	@media (max-width: 600px) {
-		font-size: 16px;
-		padding: 8px 12px;
-	}
-`;
-const SkillIcon = styled.img`
-	width: 35px;
-	height: 35px;
-	@media (max-width: 600px) {
-		width: 25px;
-		height: 25px;
 	}
 `;
 
@@ -96,7 +70,6 @@ const CardWrapper = styled.div`
 	-webkit-box-pack: center;
 	justify-content: center;
 `;
-
 const Skills = () => {
 	const ref = useRef(null);
 
@@ -152,10 +125,7 @@ const Skills = () => {
 											gap: "20px",
 											listStyle: "none",
 										}}>
-										<SkillItem>
-											<SkillIcon alt="not found" src={arrItem.link} />
-											{arrItem.skill}
-										</SkillItem>
+										<Tile item={arrItem} />
 									</motion.li>
 								))}
 							</motion.ul>
